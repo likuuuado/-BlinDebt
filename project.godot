@@ -15,9 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="BlinDebt"
-run/main_scene="uid://cmiunn1ki2o4l"
+run/main_scene="uid://b8dpiojjai0os"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[global_group]
+
+player=""
 
 [input]
 
