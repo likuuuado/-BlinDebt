@@ -11,9 +11,12 @@ var angleRads : float
 @export var direction = Vector2.UP
 
 func _ready():
-
+	player = get_tree().get_first_node_in_group("player")
 	angleRads = deg_to_rad(angulo / 2)
 
+func _process(delta):
+	if Deteccion():
+		print("jugador detectado") 
 
 func _draw():
 	var limIzquierda = direction.rotated(-angleRads) * lenght
@@ -25,3 +28,11 @@ func _draw():
 func Deteccion():
 	var playerPos = to_local(player.global_position)
 	var anguloPlayer = direction.angle_to(playerPos)
+	var distanciaPlayer = playerPos.length()
+	if distanciaPlayer > lenght:
+		return false
+	
+	if abs(anguloPlayer) <= angleRads:
+		return true
+	else:
+		return false
