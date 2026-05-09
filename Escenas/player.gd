@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Jugador
+class_name Player
 
 var speed = 100;
 
