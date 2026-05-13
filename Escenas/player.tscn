@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://drqvpvtf41j3j" path="res://Escenas/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://baa7x1mult6rt" path="res://icon.svg" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://1rp0gm2hjqwb" path="res://assets/Vignette.png" id="3_i3pqv"]
-[ext_resource type="PackedScene" uid="uid://h2i5ym3enw5n" path="res://Escenas/UI/Inventory/inventory.tscn" id="4_6njrx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 68.0
@@ -24,13 +23,6 @@ texture = ExtResource("2_i3pqv")
 z_index = 10
 z_as_relative = false
 texture = ExtResource("3_i3pqv")
-
-[node name="Inventory" parent="." unique_id=912142539 instance=ExtResource("4_6njrx")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_right = 0.0
-grow_horizontal = 1
-grow_vertical = 0
 
 [node name="Detect item" type="Area2D" parent="." unique_id=1247794046]
 

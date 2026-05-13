@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://ni1omdi8bfxr"]
 
 [ext_resource type="Texture2D" uid="uid://ynek4qlwcslf" path="res://assets/money asset.png" id="1_mpdmi"]
+[ext_resource type="Script" uid="uid://cp47028gknnjt" path="res://Escenas/Items/money.gd" id="1_p7joc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7joc"]
-radius = 97.0
+radius = 39.051247
 
 [node name="Money" type="Area2D" unique_id=558734535]
+script = ExtResource("1_p7joc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=862068963]
 shape = SubResource("CircleShape2D_p7joc")
