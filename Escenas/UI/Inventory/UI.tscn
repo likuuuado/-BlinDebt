@@ -9,18 +9,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_kd8lm")
 
-[node name="Money text" type="Label" parent="." unique_id=2021547673]
+[node name="MoneyLabel" type="Label" parent="." unique_id=2021547673]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 163.0
+offset_bottom = 53.0
 
-[node name="Items" type="HBoxContainer" parent="." unique_id=1870227591]
+[node name="KeyItemsContainer" type="HBoxContainer" parent="." unique_id=1870227591]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -93.0
+offset_right = 1148.0
 grow_vertical = 0

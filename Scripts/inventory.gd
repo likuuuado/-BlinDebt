@@ -1,18 +1,21 @@
 extends Node
 
 var money: int = 0
-var key_items: Array = []
+var key_items_id: Array = [] # Sirve para verificar si ese objeto esta en el inventario
+var key_items_icon: Array = [] # Sirve para mandarle el icono a ui
 
 # Señales para actualizar UI
 signal money_update(new_value: int)
-signal key_items_update(new_item: Array)
+signal key_items_update(new_items_icon: Array)
 
 func add_money(value: int) -> void:
 	money += value
 	emit_signal("money_update", money)
 
-# Agrega una id de key item
-func add_key(key_item_id: String) -> void:
-	if not key_items.has(key_item_id):
-		key_items.append(key_item_id)
-		emit_signal("key_items_update", key_items)
+# Agrega una id de key item y su icono a los respectivos arrays
+func add_key_item(key_item_id, icon) -> void:
+	if not key_items_id.has(key_item_id):
+		key_items_id.append(key_item_id)
+	if not key_items_icon.has(icon):
+		key_items_icon.append(icon)
+		emit_signal("key_items_update", key_items_icon)
