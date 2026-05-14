@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfhmrve2ix4hw" path="res://Escenas/wall.tscn" id="1_ejkig"]
 [ext_resource type="PackedScene" uid="uid://cmiunn1ki2o4l" path="res://Escenas/player.tscn" id="2_opoa0"]
 [ext_resource type="PackedScene" uid="uid://csp8g1yd0e5kv" path="res://Escenas/entidad_estatica.tscn" id="3_e4gc3"]
-[ext_resource type="Script" uid="uid://b3q6wlaf2hglf" path="res://canvas_perder.gd" id="4_hbpke"]
+[ext_resource type="Script" uid="uid://b3q6wlaf2hglf" path="res://UI/canvas_perder.gd" id="4_hbpke"]
 
 [node name="mission 1" type="Node" unique_id=1861232039]
 
