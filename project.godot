@@ -27,7 +27,8 @@ Inventory="*uid://buaq5ivyp8dfr"
 
 player=""
 items=""
-"key items"=""
+key_items=""
+item_detector=""
 
 [input]
 

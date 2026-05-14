@@ -8,8 +8,7 @@
 
 [node name="mission 1" type="Node" unique_id=1861232039]
 
-[node name="player" parent="." unique_id=129075098 groups=["player"] instance=ExtResource("2_opoa0")]
-visible = false
+[node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
 position = Vector2(101, 557)
 scale = Vector2(0.5, 0.5)
 
