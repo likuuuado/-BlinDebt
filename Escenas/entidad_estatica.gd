@@ -35,7 +35,7 @@ func _on_timer_timeout():
 
 	if $Sprite2D.modulate != Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.YELLOW
-		tiempoAlerta = 3
+		tiempoAlerta = 4
 		print("Enemigo alerta")
 		return
 	elif $Sprite2D.modulate == Color.YELLOW && $Sprite2D.modulate != Color.RED:
