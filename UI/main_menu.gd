@@ -1,6 +1,8 @@
 extends Control
 @onready var niveltesteo = preload("res://Escenas/mission_1.tscn")
 
+func _ready():
+	niveltesteo = preload("res://Escenas/mission_1.tscn")
 
 
 func _on_b_jugar_button_down() -> void:

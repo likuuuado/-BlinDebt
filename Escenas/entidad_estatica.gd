@@ -8,6 +8,8 @@ var angleRads : float
 @export var color1: Color
 @export var color2: Color
 @export var tiempoDeteccion:  Timer
+@export var tiempoAlerta: int
+@export var canvasPerder: CanvasLayer
 
 @export var angulo: float = 60
 @export var lenght: float = 400
@@ -16,15 +18,16 @@ var angleRads : float
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	angleRads = deg_to_rad(angulo / 2)
+	tiempoAlerta = 5
 
 
 func _process(delta):
 	if Deteccion():
-		tiempoDeteccion.wait_time = 5
+		tiempoDeteccion.wait_time = tiempoAlerta
 		if tiempoDeteccion.is_stopped():
 			tiempoDeteccion.start()
 	else:
-		tiempoDeteccion.wait_time = 5
+		tiempoDeteccion.wait_time = tiempoAlerta
 		tiempoDeteccion.stop()
 
 
@@ -32,11 +35,14 @@ func _on_timer_timeout():
 
 	if $Sprite2D.modulate != Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.YELLOW
+		tiempoAlerta = 4
 		print("Enemigo alerta")
 		return
 	elif $Sprite2D.modulate == Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.RED
 	print("Jugador detectado")
+	canvasPerder.visible = true
+	get_tree().paused = true
 
 func _draw():
 	var limIzquierda = direction.rotated(-angleRads) * lenght
