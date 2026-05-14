@@ -3,10 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bfhmrve2ix4hw" path="res://Escenas/wall.tscn" id="1_ejkig"]
 [ext_resource type="PackedScene" uid="uid://cmiunn1ki2o4l" path="res://Escenas/player.tscn" id="2_opoa0"]
 [ext_resource type="PackedScene" uid="uid://csp8g1yd0e5kv" path="res://Escenas/entidad_estatica.tscn" id="3_e4gc3"]
+[ext_resource type="PackedScene" uid="uid://bo2dbe75ubdg" path="res://Escenas/Items/Keys.tscn" id="4_qr8xh"]
+[ext_resource type="PackedScene" uid="uid://ni1omdi8bfxr" path="res://Escenas/Items/Money.tscn" id="5_c120i"]
+[ext_resource type="PackedScene" uid="uid://h2i5ym3enw5n" path="res://Escenas/UI/Inventory/UI.tscn" id="6_c120i"]
 
 [node name="mission 1" type="Node" unique_id=1861232039]
 
-[node name="player" parent="." unique_id=129075098 groups=["player"] instance=ExtResource("2_opoa0")]
+[node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
 position = Vector2(101, 557)
 scale = Vector2(0.5, 0.5)
 
@@ -22,5 +25,19 @@ tiempoDeteccion = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="CharacterBody2D" unique_id=1546933403]
 wait_time = 2.967
+
+[node name="Keys" parent="." unique_id=1584546891 instance=ExtResource("4_qr8xh")]
+position = Vector2(42, 230)
+scale = Vector2(0.5, 0.5)
+key_item_id = "Key1"
+
+[node name="Money" parent="." unique_id=558734535 instance=ExtResource("5_c120i")]
+position = Vector2(186, 233)
+scale = Vector2(0.5, 0.5)
+value = 15
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=70727444]
+
+[node name="UI" parent="CanvasLayer" unique_id=912142539 instance=ExtResource("6_c120i")]
 
 [connection signal="timeout" from="CharacterBody2D/Timer" to="CharacterBody2D" method="_on_timer_timeout"]
