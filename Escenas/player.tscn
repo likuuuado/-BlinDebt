@@ -16,15 +16,16 @@ radius = 146.77875
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=505364130]
+z_index = 1
 texture = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1968899793]
 shape = SubResource("CircleShape2D_hqtel")
 
 [node name="Vignette" type="Sprite2D" parent="." unique_id=1608685553]
-visible = false
 z_index = 10
 z_as_relative = false
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_i3pqv")
 
 [node name="Detect item" type="Area2D" parent="." unique_id=1247794046 groups=["item_detector"]]
@@ -33,13 +34,18 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect item" unique_id=1081659714]
 shape = SubResource("CircleShape2D_6njrx")
 
-[node name="vigneta" type="PointLight2D" parent="." unique_id=1590724301]
-color = Color(0.5525219, 0.5462251, 0.2591908, 1)
+[node name="LuzAlrededor" type="PointLight2D" parent="." unique_id=1590724301]
+z_index = 1
+energy = 2.6
+shadow_enabled = true
 texture = ExtResource("4_cgfde")
 
 [node name="Linterna" type="PointLight2D" parent="." unique_id=2064462486]
-position = Vector2(292, 0)
+z_index = 1
+position = Vector2(-1, 2)
 scale = Vector2(0.97250015, 1)
-color = Color(0.78829396, 0.7730705, 0.16558316, 1)
+color = Color(0.9906451, 0.93896645, 0.92931056, 1)
+energy = 7.21
+shadow_enabled = true
 texture = ExtResource("5_xlwfv")
-offset = Vector2(100, 0)
+offset = Vector2(300, 0)

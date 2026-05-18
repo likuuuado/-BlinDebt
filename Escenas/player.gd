@@ -13,7 +13,7 @@ func _physics_process(delta):
 	var direcciones = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direcciones * speed
 
-	posicionLinterna = get_viewport().get_mouse_position()
+	posicionLinterna = get_global_mouse_position()
 	linterna.look_at(posicionLinterna)
 	
 	move_and_slide()
