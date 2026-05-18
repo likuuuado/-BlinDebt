@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://drqvpvtf41j3j" path="res://Escenas/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://baa7x1mult6rt" path="res://icon.svg" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://1rp0gm2hjqwb" path="res://assets/Vignette.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://c7b4bko0sgodb" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="4_cgfde"]
+[ext_resource type="Texture2D" uid="uid://sxvpatofivxx" path="res://assets/torch_light.png" id="5_xlwfv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 68.0
@@ -13,18 +15,31 @@ radius = 146.77875
 [node name="player" type="CharacterBody2D" unique_id=1195640504 groups=["player"]]
 script = ExtResource("1_onrkg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1968899793]
-shape = SubResource("CircleShape2D_hqtel")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=505364130]
 texture = ExtResource("2_i3pqv")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1968899793]
+shape = SubResource("CircleShape2D_hqtel")
+
 [node name="Vignette" type="Sprite2D" parent="." unique_id=1608685553]
+visible = false
 z_index = 10
 z_as_relative = false
 texture = ExtResource("3_i3pqv")
 
 [node name="Detect item" type="Area2D" parent="." unique_id=1247794046 groups=["item_detector"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect item" unique_id=1081659714]
 shape = SubResource("CircleShape2D_6njrx")
+
+[node name="vigneta" type="PointLight2D" parent="." unique_id=1590724301]
+color = Color(0.5525219, 0.5462251, 0.2591908, 1)
+texture = ExtResource("4_cgfde")
+
+[node name="Linterna" type="PointLight2D" parent="." unique_id=2064462486]
+position = Vector2(292, 0)
+scale = Vector2(0.97250015, 1)
+color = Color(0.78829396, 0.7730705, 0.16558316, 1)
+texture = ExtResource("5_xlwfv")
+offset = Vector2(100, 0)
