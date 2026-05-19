@@ -8,7 +8,7 @@ var angleRads : float
 @export var color1: Color
 @export var color2: Color
 @export var tiempoDeteccion:  Timer
-@export var tiempoAlerta: int
+@export var tiempoAlerta: float
 @export var canvasPerder: CanvasLayer
 
 @export var angulo: float = 60
