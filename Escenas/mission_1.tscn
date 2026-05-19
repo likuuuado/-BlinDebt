@@ -7,9 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://ni1omdi8bfxr" path="res://Escenas/Items/Money.tscn" id="5_c120i"]
 [ext_resource type="PackedScene" uid="uid://h2i5ym3enw5n" path="res://Escenas/UI/Inventory/UI.tscn" id="6_c120i"]
 [ext_resource type="Script" uid="uid://b3q6wlaf2hglf" path="res://UI/canvas_perder.gd" id="7_jd2pr"]
+[ext_resource type="PackedScene" uid="uid://claga5mxwiqe8" path="res://Escenas/entidad_rf.tscn" id="8_3fhh2"]
+[ext_resource type="Texture2D" uid="uid://sxvpatofivxx" path="res://assets/torch_light.png" id="9_oh7jq"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd2pr"]
 polygon = PackedVector2Array(60, -62.5, -60, -60, -62.5, 55, 70, 62.5)
+
+[sub_resource type="Curve2D" id="Curve2D_x6de0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 316, 85, 0, 0, 0, 0, 451, 85, 0, 0, 0, 0, 864, 78, 0, 0, 0, 0, 1079, 76, 0, 0, 0, 0, 1095, 192, 0, 0, 0, 0, 826, 196, 0, 0, 0, 0, 506, 196, 0, 0, 0, 0, 316, 192, 0, 0, 0, 0, 316, 85)
+}
+point_count = 9
 
 [node name="mission 1" type="Node" unique_id=1861232039]
 
@@ -18,6 +26,7 @@ position = Vector2(91, 481)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1631881998]
+position = Vector2(-18, -156)
 
 [node name="ColorRect" type="ColorRect" parent="player/Camera2D" unique_id=1659205162]
 offset_left = -1170.0
@@ -130,7 +139,7 @@ key_item_id = "Key1"
 [node name="enemies" type="Node" parent="Entorno" unique_id=392103474]
 
 [node name="CharacterBody2D" parent="Entorno/enemies" unique_id=1718310942 node_paths=PackedStringArray("tiempoDeteccion", "canvasPerder") instance=ExtResource("3_e4gc3")]
-position = Vector2(268, 453)
+position = Vector2(1149, 453)
 scale = Vector2(0.4, 0.4)
 color1 = Color(1, 0, 0, 1)
 color2 = Color(0, 0, 0.8392157, 1)
@@ -249,6 +258,34 @@ tile_map_data = PackedByteArray("AAAAAA8AAAACAAUAAAAAAA4AAAACAAMAAAABAA4AAAACAAM
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1422715817]
 color = Color(0.073891945, 0.1378426, 0.114856996, 1)
 
+[node name="Path2D" type="Path2D" parent="." unique_id=59464609]
+curve = SubResource("Curve2D_x6de0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=2016104951]
+position = Vector2(316, 85)
+
+[node name="EntidadRF" parent="Path2D/PathFollow2D" unique_id=761511611 node_paths=PackedStringArray("linternaVision", "tiempoDeteccion", "canvasPerder") instance=ExtResource("8_3fhh2")]
+scale = Vector2(0.5, 0.5)
+up_direction = Vector2(1, 0)
+linternaVision = NodePath("PointLight2D")
+color1 = Color(0.8059726, 0, 0, 1)
+color2 = Color(0.7953644, 0, 0, 1)
+tiempoDeteccion = NodePath("Timer")
+canvasPerder = NodePath("../../../CanvasLayer")
+tiempoAlerta = 2.0
+angulo = 70.0
+speed = 50.0
+direction = Vector2(1, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Path2D/PathFollow2D/EntidadRF" unique_id=1625854450]
+z_index = 1
+position = Vector2(300, -2)
+energy = 6.9
+shadow_enabled = true
+texture = ExtResource("9_oh7jq")
+
+[node name="Timer" type="Timer" parent="Path2D/PathFollow2D/EntidadRF" unique_id=1906456892]
+
 [connection signal="button_down" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_button_down"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D/Timer" to="Entorno/enemies/CharacterBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D2/Timer" to="Entorno/enemies/CharacterBody2D2" method="_on_timer_timeout"]
@@ -259,3 +296,4 @@ color = Color(0.073891945, 0.1378426, 0.114856996, 1)
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D7/Timer" to="Entorno/enemies/CharacterBody2D7" method="_on_timer_timeout"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D8/Timer" to="Entorno/enemies/CharacterBody2D8" method="_on_timer_timeout"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D9/Timer" to="Entorno/enemies/CharacterBody2D9" method="_on_timer_timeout"]
+[connection signal="timeout" from="Path2D/PathFollow2D/EntidadRF/Timer" to="Path2D/PathFollow2D/EntidadRF" method="_on_timer_timeout"]
