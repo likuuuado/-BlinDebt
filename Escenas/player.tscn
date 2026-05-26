@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://1rp0gm2hjqwb" path="res://assets/Vignette.png" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c7b4bko0sgodb" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="4_cgfde"]
 [ext_resource type="Texture2D" uid="uid://sxvpatofivxx" path="res://assets/torch_light.png" id="5_xlwfv"]
+[ext_resource type="AudioStream" uid="uid://3g3tvs41s4tk" path="res://Sonidos/PlayerPasosLento.mp3" id="6_xlwfv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 68.0
@@ -49,3 +50,10 @@ energy = 7.21
 shadow_enabled = true
 texture = ExtResource("5_xlwfv")
 offset = Vector2(300, 0)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1789001679]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=250448832]
+stream = ExtResource("6_xlwfv")
+max_distance = 943.0
