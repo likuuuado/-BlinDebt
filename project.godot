@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Inventory="*uid://buaq5ivyp8dfr"
+SonidoPasos="*uid://crn1q4bjtsfxs"
 
 [global_group]
 

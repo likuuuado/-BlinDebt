@@ -22,3 +22,6 @@ func _physics_process(delta):
 	linterna.look_at(posicionLinterna)
 	
 	move_and_slide()
+	
+func GenerarSonido():
+	SonidoPasos.GenerarSonido(global_position)
