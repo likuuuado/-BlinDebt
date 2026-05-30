@@ -8,7 +8,7 @@ var cantidadDinero: int
 func _ready() -> void: # Conectar señales del Inventory
 	Inventory.connect("money_update", Callable(self, "SumarDinero"))
 	Inventory.connect("key_items_update", Callable(self, "VerificarLlave"))
-	canvasVictoria.visible = false
+	#canvasVictoria.visible = false
 
 func VerificarLlave():
 	tieneLlave = true

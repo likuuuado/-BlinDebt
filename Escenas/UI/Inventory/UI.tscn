@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://h2i5ym3enw5n"]
 
 [ext_resource type="Script" uid="uid://ugbbqrcd7ask" path="res://Escenas/UI/Inventory/ui.gd" id="1_kd8lm"]
+[ext_resource type="Script" uid="uid://cs0jy2qho14q8" path="res://Escenas/UI/Inventory/map.gd" id="2_157th"]
 
 [node name="UI" type="Control" unique_id=912142539]
 layout_mode = 3
@@ -17,11 +18,31 @@ layout_mode = 1
 offset_right = 163.0
 offset_bottom = 53.0
 
-[node name="KeyItemsContainer" type="HBoxContainer" parent="." unique_id=1870227591]
+[node name="Inventory" type="Control" parent="." unique_id=1011453318]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KeyItemsContainer" type="HBoxContainer" parent="Inventory" unique_id=1870227591]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -93.0
+offset_top = 515.0
 offset_right = 1148.0
+offset_bottom = 608.0
 grow_vertical = 0
+
+[node name="Map" type="Control" parent="Inventory" unique_id=294802900]
+layout_mode = 1
+anchor_left = 19.283
+anchor_top = 8.55
+anchor_right = 19.283
+anchor_bottom = 8.55
+offset_left = -306.32007
+offset_top = -285.0
+offset_right = 306.29675
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_157th")

@@ -41,10 +41,8 @@ offset_bottom = 666.0
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=70727444]
-visible = false
 
 [node name="UI" parent="CanvasLayer" unique_id=912142539 instance=ExtResource("6_c120i")]
-visible = false
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1309768734]
 process_mode = 3
