@@ -1,7 +1,7 @@
 extends Control
 
 @onready var money_label: Label = $MoneyLabel
-@onready var key_items_container: HBoxContainer = $KeyItemsContainer
+@onready var KeyItemsContainer: BoxContainer = $KeyItemsContainer
 
 
 func _ready() -> void: # Conectar señales del Inventory
@@ -13,11 +13,11 @@ func _on_money_update(new_value: int) -> void:
 
 func _on_key_items_update(new_items_icon: Array) -> void:
 	# Limpiar el container antes de actualizar
-	for child in key_items_container.get_children():
+	for child in KeyItemsContainer.get_children():
 		child.queue_free()
 		# Crear íconos para cada id recibido
 		for icon in new_items_icon:
 			var icon_texture = TextureRect.new()
 			icon_texture.texture = load(icon)
 			icon_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			key_items_container.add_child(icon_texture)
+			KeyItemsContainer.add_child(icon_texture)

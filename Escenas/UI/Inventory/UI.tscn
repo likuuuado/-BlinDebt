@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ugbbqrcd7ask" path="res://Escenas/UI/Inventory/ui.gd" id="1_kd8lm"]
 [ext_resource type="Script" uid="uid://cs0jy2qho14q8" path="res://Escenas/UI/Inventory/map.gd" id="2_157th"]
+[ext_resource type="Texture2D" uid="uid://0s3ebcps2aov" path="res://assets/g5.png" id="3_2gxrh"]
+[ext_resource type="Texture2D" uid="uid://db3nq65dqygfr" path="res://assets/g6.png" id="4_gni5c"]
+[ext_resource type="Texture2D" uid="uid://dyxujkdteucho" path="res://assets/g1.png" id="5_dlmeu"]
+[ext_resource type="Texture2D" uid="uid://b34nrq6ka30w0" path="res://assets/g2.png" id="6_qr4fn"]
+[ext_resource type="Texture2D" uid="uid://dt8qcpycifco" path="res://assets/g4.png" id="7_imutq"]
+[ext_resource type="Texture2D" uid="uid://yheum00pmqcm" path="res://assets/g8.png" id="8_k1l1u"]
 
 [node name="UI" type="Control" unique_id=912142539]
 layout_mode = 3
@@ -23,15 +29,31 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="KeyItemsContainer" type="HBoxContainer" parent="Inventory" unique_id=1870227591]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 515.0
-offset_right = 1148.0
-offset_bottom = 608.0
-grow_vertical = 0
+[node name="KeyItemsContainer3" type="GridContainer" parent="Inventory" unique_id=159738608]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 248.0
+offset_right = 417.0
+offset_bottom = 611.0
+columns = 3
+
+[node name="1" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=828517074]
+
+[node name="2" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=764744502]
+
+[node name="3" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=633081923]
+
+[node name="4" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=1366129998]
+
+[node name="5" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=1062352203]
+
+[node name="6" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=1110476078]
+
+[node name="7" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=1010983025]
+
+[node name="8" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=503624426]
+
+[node name="9" type="Sprite2D" parent="Inventory/KeyItemsContainer3" unique_id=1617116723]
 
 [node name="Map" type="Control" parent="Inventory" unique_id=294802900]
 layout_mode = 1
@@ -39,10 +61,146 @@ anchor_left = 19.283
 anchor_top = 8.55
 anchor_right = 19.283
 anchor_bottom = 8.55
-offset_left = -306.32007
-offset_top = -285.0
-offset_right = 306.29675
-offset_bottom = 285.0
+offset_left = -253.94623
+offset_top = -284.0
+offset_right = 353.29675
+offset_bottom = 281.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_157th")
+
+[node name="MouseSprite1" type="Sprite2D" parent="Inventory" unique_id=1590638134]
+position = Vector2(586, 29)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_2gxrh")
+
+[node name="MouseSprite2" type="Sprite2D" parent="Inventory" unique_id=53941068]
+position = Vector2(768, 28)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_gni5c")
+
+[node name="Labels" type="Control" parent="Inventory" unique_id=228172208]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Inventory/Labels" unique_id=155834074]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 21.0
+offset_right = 738.0
+offset_bottom = 44.0
+text = "Para pintar línea"
+
+[node name="Label2" type="Label" parent="Inventory/Labels" unique_id=1190775610]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 18.0
+offset_right = 945.0
+offset_bottom = 41.0
+text = "Para despintar línea"
+
+[node name="Label3" type="Label" parent="Inventory/Labels" unique_id=919812592]
+layout_mode = 0
+offset_left = 1078.0
+offset_top = 18.0
+offset_right = 1118.0
+offset_bottom = 41.0
+text = "Pins"
+
+[node name="Label4" type="Label" parent="Inventory/Labels" unique_id=1226578604]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 22.0
+offset_right = 555.0
+offset_bottom = 45.0
+text = "Mapa"
+
+[node name="Label5" type="Label" parent="Inventory/Labels" unique_id=2064665492]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 220.0
+offset_right = 131.0
+offset_bottom = 243.0
+text = "Inventario"
+
+[node name="Label6" type="Label" parent="Inventory/Labels" unique_id=316173557]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 21.0
+offset_right = 125.0
+offset_bottom = 44.0
+text = "Objetivos"
+
+[node name="Label7" type="Label" parent="Inventory/Labels" unique_id=703867195]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 59.0
+offset_right = 132.0
+offset_bottom = 82.0
+text = "asdasdasd"
+
+[node name="Pins" type="Control" parent="Inventory" unique_id=867992269]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Blue3" type="Sprite2D" parent="Inventory/Pins" unique_id=675406131]
+position = Vector2(974, 13)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_dlmeu")
+
+[node name="Blue2" type="Sprite2D" parent="Inventory/Pins" unique_id=2115399124]
+position = Vector2(974.00006, 23)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_dlmeu")
+
+[node name="Blue1" type="Sprite2D" parent="Inventory/Pins" unique_id=561006610]
+position = Vector2(974.55, 33.05)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_dlmeu")
+
+[node name="Green3" type="Sprite2D" parent="Inventory/Pins" unique_id=193863517]
+position = Vector2(1006, 15.000001)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_qr4fn")
+
+[node name="Green2" type="Sprite2D" parent="Inventory/Pins" unique_id=1164496045]
+position = Vector2(1006.00006, 23)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_qr4fn")
+
+[node name="Green1" type="Sprite2D" parent="Inventory/Pins" unique_id=2058547040]
+position = Vector2(1006, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_qr4fn")
+
+[node name="Red3" type="Sprite2D" parent="Inventory/Pins" unique_id=1536685274]
+position = Vector2(1035, 16)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_imutq")
+
+[node name="Red2" type="Sprite2D" parent="Inventory/Pins" unique_id=1104041095]
+position = Vector2(1035, 24)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_imutq")
+
+[node name="Red1" type="Sprite2D" parent="Inventory/Pins" unique_id=773124865]
+position = Vector2(1035, 32)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_imutq")
+
+[node name="White3" type="Sprite2D" parent="Inventory/Pins" unique_id=459702182]
+position = Vector2(1059.0001, 14)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_k1l1u")
+
+[node name="White2" type="Sprite2D" parent="Inventory/Pins" unique_id=1053764203]
+position = Vector2(1059, 22)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_k1l1u")
+
+[node name="White1" type="Sprite2D" parent="Inventory/Pins" unique_id=228208157]
+position = Vector2(1059.55, 30.050001)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_k1l1u")
