@@ -3,8 +3,8 @@ extends Node
 var tileMaps: Array[TileMapLayer] = []
 
 const sonidoPasos = {
-	"pasos": [
-		preload("uid://3g3tvs41s4tk")
+	"Piso": [
+		preload("res://Sonidos/Pasos 1.mp3")
 	], 
 	"corriendo": []
 	} 
