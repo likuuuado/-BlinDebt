@@ -14,14 +14,28 @@ var ultimaDireccion
 var estado
 var velocidadCorrer = 200
 
+var cansancio = 1
+var estamina
+var estaminaMaxima = 2
+var recuperacion = 1
+
 func _ready() -> void:
 	linterna.enabled = true
 	audioListener.make_current()
 	estado = "caminando"
+	estamina = estaminaMaxima
 
 func _physics_process(delta):
 	posicionLinterna = get_global_mouse_position()
 	linterna.look_at(posicionLinterna)
+	if estado == "corriendo":
+		estamina -= cansancio * delta
+		if estamina <= 0:
+			estado = 0
+			estado = "caminando"
+	else: 
+		estamina += recuperacion * delta
+		estamina = min(estamina, estaminaMaxima)
 	
 	GenerarSonido()
 	GetInput()
@@ -30,7 +44,7 @@ func _physics_process(delta):
 func GetInput():
 	
 	
-	if Input.is_action_just_pressed("move_correr"):
+	if Input.is_action_just_pressed("move_correr") && estamina > 0:
 		estado = "corriendo"
 	if Input.is_action_just_released("move_correr"):
 		estado = "caminando"
@@ -38,6 +52,7 @@ func GetInput():
 	var direcciones = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if estado == "caminando": 
 		velocity = direcciones * speed
+		
 	elif  estado == "corriendo":
 		velocity = direcciones * velocidadCorrer
 	
