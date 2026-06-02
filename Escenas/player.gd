@@ -11,10 +11,13 @@ class_name Player
 var posicionLinterna: Vector2
 var speed = 100;
 var ultimaDireccion
+var estado
+var velocidadCorrer = 200
 
 func _ready() -> void:
 	linterna.enabled = true
 	audioListener.make_current()
+	estado = "caminando"
 
 func _physics_process(delta):
 	posicionLinterna = get_global_mouse_position()
@@ -25,9 +28,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 func GetInput():
-	var direcciones = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	Animar()
 	
+	
+	if Input.is_action_just_pressed("move_correr"):
+		estado = "corriendo"
+	if Input.is_action_just_released("move_correr"):
+		estado = "caminando"
+	
+	var direcciones = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if estado == "caminando": 
+		velocity = direcciones * speed
+	elif  estado == "corriendo":
+		velocity = direcciones * velocidadCorrer
 	
 	if abs(direcciones.x) > abs(direcciones.y):
 		if direcciones.x > 0:
@@ -41,14 +53,19 @@ func GetInput():
 			sprite_2d.rotation = 0
 	
 	
-	velocity = direcciones * speed
+	
+	Animar()
 	
 	if direcciones == Vector2.ZERO:
 		PararAnimacion()
 
 func Animar():
-	animation_player.play("PlayerWalk")
-	audio_stream_player_2d.play()
+	if estado == "caminando":
+		animation_player.play("PlayerWalk")
+		audio_stream_player_2d.play()
+	elif estado == "corriendo":
+		animation_player.play("PlayerRun")
+		audio_stream_player_2d.play()
 
 func PararAnimacion():
 	animation_player.stop()
