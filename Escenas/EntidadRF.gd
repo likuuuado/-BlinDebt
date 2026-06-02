@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 class_name EnemigoRF
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var pathFollow
 var player
@@ -48,9 +49,11 @@ func _process(delta):
 		tiempoDeteccion.wait_time = tiempoAlerta
 		if tiempoDeteccion.is_stopped():
 			tiempoDeteccion.start()
+			audio_stream_player_2d.volume_db = -100
 	else:
 		tiempoDeteccion.wait_time = tiempoAlerta
 		detectando = false
+		audio_stream_player_2d.volume_db = 0
 		tiempoDeteccion.stop()
 
 
