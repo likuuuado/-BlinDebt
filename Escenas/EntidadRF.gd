@@ -27,6 +27,8 @@ var pathPos: Vector2
 
 var detectando: bool = false
 
+var puntosAlerta: int
+
 func _ready():
 	pathFollow = get_parent()
 	pathPos = pathFollow.global_position 
@@ -62,11 +64,15 @@ func _on_timer_timeout():
 	if $Sprite2D.modulate != Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.YELLOW
 		tiempoAlerta = 4
+		puntosAlerta = 3
+		AlertaGeneral.nivelAlerta += puntosAlerta
 		print("Enemigo alerta")
 		return
 	elif $Sprite2D.modulate == Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.RED
 	print("Jugador detectado")
+	puntosAlerta = 6 
+	AlertaGeneral.nivelAlerta += puntosAlerta
 	canvasPerder.visible = true
 	get_tree().paused = true
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfhmrve2ix4hw" path="res://Escenas/wall.tscn" id="1_ejkig"]
 [ext_resource type="PackedScene" uid="uid://cmiunn1ki2o4l" path="res://Escenas/player.tscn" id="2_opoa0"]
+[ext_resource type="Script" uid="uid://cnjh7g4x71lar" path="res://Escenas/progress_bar.gd" id="3_cc327"]
 [ext_resource type="PackedScene" uid="uid://csp8g1yd0e5kv" path="res://Escenas/entidad_estatica.tscn" id="3_e4gc3"]
 [ext_resource type="PackedScene" uid="uid://bo2dbe75ubdg" path="res://Escenas/Items/Keys.tscn" id="4_qr8xh"]
 [ext_resource type="PackedScene" uid="uid://ni1omdi8bfxr" path="res://Escenas/Items/Money.tscn" id="5_c120i"]
@@ -27,27 +28,43 @@ size = Vector2(129, 115)
 [node name="mission 1" type="Node" unique_id=1861232039]
 
 [node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
-visible = false
 position = Vector2(91, 481)
 scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1631881998]
+visibility_layer = 7
 position = Vector2(-18, -156)
 
 [node name="ColorRect" type="ColorRect" parent="player/Camera2D" unique_id=1659205162]
+process_mode = 4
 offset_left = -2275.3335
 offset_top = -1160.6667
 offset_right = 2064.6665
 offset_bottom = 1239.333
+mouse_behavior_recursive = 1
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=70727444]
-visible = false
 
 [node name="UI" parent="CanvasLayer" unique_id=912142539 instance=ExtResource("6_c120i")]
-visible = false
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1309768734]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1340143500 groups=["BarraAlerta"]]
+process_mode = 3
+modulate = Color(0.67473984, 0.46126354, 0.09823055, 1)
+self_modulate = Color(0.74912435, 0.49138302, 0.021882743, 1)
+light_mask = 7
+visibility_layer = 15
+z_index = 1
+offset_left = 1080.0
+offset_top = 206.0
+offset_right = 1276.4153
+offset_bottom = 245.93164
+rotation = -1.5707964
+max_value = 5.0
+value = 0.1
+script = ExtResource("3_cc327")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1309768734 groups=["CanvasDerrota"]]
 process_mode = 3
 visible = false
 script = ExtResource("7_jd2pr")
@@ -74,73 +91,9 @@ theme_override_font_sizes/font_size = 100
 text = "Perdiste!"
 
 [node name="Entorno" type="Node2D" parent="." unique_id=924773540]
-
-[node name="recolectables" type="Node" parent="Entorno" unique_id=701331069]
-
-[node name="Money" parent="Entorno/recolectables" unique_id=558734535 instance=ExtResource("5_c120i")]
-position = Vector2(764, 539)
-value = 15
-
-[node name="Money2" parent="Entorno/recolectables" unique_id=748236380 instance=ExtResource("5_c120i")]
-position = Vector2(1927, 427)
-value = 5
-
-[node name="Money3" parent="Entorno/recolectables" unique_id=522224336 instance=ExtResource("5_c120i")]
-position = Vector2(760, -322)
-value = 2
-
-[node name="Money4" parent="Entorno/recolectables" unique_id=306950269 instance=ExtResource("5_c120i")]
-position = Vector2(848, -693)
-value = 1
-
-[node name="Money5" parent="Entorno/recolectables" unique_id=1692699365 instance=ExtResource("5_c120i")]
-position = Vector2(290, -187)
-value = 4
-
-[node name="Money6" parent="Entorno/recolectables" unique_id=1543576081 instance=ExtResource("5_c120i")]
-position = Vector2(47, -380)
-value = 6
-
-[node name="Money7" parent="Entorno/recolectables" unique_id=14341723 instance=ExtResource("5_c120i")]
-position = Vector2(828, -1014)
-value = 10
-
-[node name="Money8" parent="Entorno/recolectables" unique_id=447236622 instance=ExtResource("5_c120i")]
-position = Vector2(129, -1297)
-value = 20
-
-[node name="Money9" parent="Entorno/recolectables" unique_id=905870810 instance=ExtResource("5_c120i")]
-position = Vector2(1326, -1029)
-value = 3
-
-[node name="Money10" parent="Entorno/recolectables" unique_id=608197602 instance=ExtResource("5_c120i")]
-position = Vector2(1236, -225)
-value = 5
-
-[node name="Money11" parent="Entorno/recolectables" unique_id=1412539022 instance=ExtResource("5_c120i")]
-position = Vector2(1884, -665)
-value = 2
-
-[node name="Money12" parent="Entorno/recolectables" unique_id=1432716849 instance=ExtResource("5_c120i")]
-position = Vector2(2472, -1307)
-value = 1
-
-[node name="Money13" parent="Entorno/recolectables" unique_id=560029865 instance=ExtResource("5_c120i")]
-position = Vector2(2637, -1266)
-value = 6
-
-[node name="Money14" parent="Entorno/recolectables" unique_id=826065140 instance=ExtResource("5_c120i")]
-position = Vector2(2013, -146)
-value = 1
-
-[node name="Money15" parent="Entorno/recolectables" unique_id=244641880 instance=ExtResource("5_c120i")]
-position = Vector2(2685, 38)
-value = 8
-
-[node name="Keys" parent="Entorno/recolectables" unique_id=1584546891 instance=ExtResource("4_qr8xh")]
-position = Vector2(2672, -967)
-scale = Vector2(0.5, 0.5)
-key_item_id = "Key1"
+light_mask = 3
+visibility_layer = 7
+z_index = 1
 
 [node name="enemies" type="Node" parent="Entorno" unique_id=392103474]
 
@@ -265,6 +218,103 @@ tile_map_data = PackedByteArray("AAAAAA8AAAACAAUAAAAAAA4AAAACAAMAAAABAA4AAAACAAM
 scale = Vector2(0.32, 0.32)
 tile_map_data = PackedByteArray("AAD4/2UAAAAAAAAAAAAIAGUAAAAAAAAAAAAYAGUAAAAAAAAAAAAIAFUAAAAAAAAAAAAYAFUAAAAAAAAAAAAIAEUAAAAAAAAAAAAYAEUAAAAAAAAAAAA=")
 
+[node name="Money" parent="Entorno" unique_id=558734535 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(764, 539)
+priority = 1
+value = 15
+
+[node name="Money2" parent="Entorno" unique_id=748236380 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(1927, 427)
+priority = 1
+value = 5
+
+[node name="Money3" parent="Entorno" unique_id=522224336 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(760, -322)
+priority = 1
+value = 2
+
+[node name="Money4" parent="Entorno" unique_id=306950269 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(848, -693)
+priority = 1
+value = 1
+
+[node name="Money5" parent="Entorno" unique_id=1692699365 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(290, -187)
+priority = 1
+value = 4
+
+[node name="Money6" parent="Entorno" unique_id=1543576081 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(47, -380)
+priority = 1
+value = 6
+
+[node name="Money7" parent="Entorno" unique_id=14341723 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(828, -1014)
+priority = 1
+value = 10
+
+[node name="Money8" parent="Entorno" unique_id=447236622 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(129, -1297)
+priority = 1
+value = 20
+
+[node name="Money9" parent="Entorno" unique_id=905870810 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(1326, -1029)
+priority = 1
+value = 3
+
+[node name="Money10" parent="Entorno" unique_id=608197602 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(1236, -225)
+priority = 1
+value = 5
+
+[node name="Money11" parent="Entorno" unique_id=1412539022 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(1884, -665)
+priority = 1
+value = 2
+
+[node name="Money12" parent="Entorno" unique_id=1432716849 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(2472, -1307)
+priority = 1
+value = 1
+
+[node name="Money13" parent="Entorno" unique_id=560029865 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(2637, -1266)
+priority = 1
+value = 6
+
+[node name="Money14" parent="Entorno" unique_id=826065140 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(2013, -146)
+priority = 1
+value = 1
+
+[node name="Money15" parent="Entorno" unique_id=244641880 instance=ExtResource("5_c120i")]
+z_index = 1
+position = Vector2(2685, 38)
+priority = 1
+value = 8
+
+[node name="Keys" parent="Entorno" unique_id=1584546891 instance=ExtResource("4_qr8xh")]
+z_index = 1
+position = Vector2(2672, -967)
+scale = Vector2(0.5, 0.5)
+priority = 1
+key_item_id = "Key1"
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1422715817]
 color = Color(0.073891945, 0.1378426, 0.114856996, 1)
 
@@ -296,8 +346,9 @@ texture = ExtResource("9_oh7jq")
 
 [node name="Timer" type="Timer" parent="Path2D/PathFollow2D/EntidadRF" unique_id=1906456892]
 
-[node name="Verificador de victoria" type="Node2D" parent="." unique_id=1496136117]
+[node name="Verificador de victoria" type="Node2D" parent="." unique_id=1496136117 node_paths=PackedStringArray("canvasVictoria")]
 script = ExtResource("10_oh7jq")
+canvasVictoria = NodePath("../CanvasLayer")
 
 [node name="Area2D" type="Area2D" parent="Verificador de victoria" unique_id=1732179681]
 
