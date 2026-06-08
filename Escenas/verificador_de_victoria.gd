@@ -6,9 +6,11 @@ var cantidadDinero: int
 @export var cantidadNecesaria: int
 
 func _ready() -> void: # Conectar señales del Inventory
+	tieneLlave = false
+	canvasVictoria.visible = false
 	Inventory.connect("money_update", Callable(self, "SumarDinero"))
 	Inventory.connect("key_items_update", Callable(self, "VerificarLlave"))
-	canvasVictoria.visible = false
+
 
 func VerificarLlave():
 	tieneLlave = true

@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 Inventory="*uid://buaq5ivyp8dfr"
 SonidoPasos="*uid://crn1q4bjtsfxs"
+AlertaGeneral="*uid://ca88v75q8cbxs"
 
 [global_group]
 
@@ -30,6 +31,8 @@ player=""
 items=""
 key_items=""
 item_detector=""
+CanvasDerrota=""
+BarraAlerta=""
 
 [input]
 

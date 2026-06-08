@@ -31,7 +31,9 @@ func _physics_process(delta):
 	if estado == "corriendo":
 		estamina -= cansancio * delta
 		if estamina <= 0:
-			estado = 0
+			AlertaGeneral.nivelAlerta += 3
+			AlertaGeneral.GestionarBarrra()
+			estamina = 0
 			estado = "caminando"
 	else: 
 		estamina += recuperacion * delta
