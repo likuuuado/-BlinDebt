@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7oopls2qtqsk"]
 
-[ext_resource type="Texture2D" uid="uid://cfeowg1eo5scf" path="res://assets/BlinDebt Wall TileSet.png" id="1_586bq"]
+[ext_resource type="Texture2D" uid="uid://cfeowg1eo5scf" path="res://assets/Escenario/BlinDebt Wall TileSet.png" id="1_586bq"]
 [ext_resource type="Script" uid="uid://80uu1f64muvr" path="res://Escenas/suelo.gd" id="2_hmgs2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmgs2"]
