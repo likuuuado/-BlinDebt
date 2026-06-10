@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csp8g1yd0e5kv"]
 
 [ext_resource type="Script" uid="uid://ct1wnw6qq7imv" path="res://Escenas/entidad_estatica.gd" id="1_it0la"]
-[ext_resource type="Texture2D" uid="uid://c71tno6gq23o4" path="res://assets/Enemy/Enemy Walk-sheet.png" id="2_j47g3"]
+[ext_resource type="Texture2D" uid="uid://baa7x1mult6rt" path="res://icon.svg" id="2_j47g3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_it0la"]
 
@@ -11,7 +11,5 @@ script = ExtResource("1_it0la")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=687661662]
 shape = SubResource("CircleShape2D_it0la")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1755856531]
-scale = Vector2(0.4252083, 0.4252083)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=38468850]
 texture = ExtResource("2_j47g3")
-hframes = 8

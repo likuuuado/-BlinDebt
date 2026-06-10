@@ -1,74 +1,10 @@
 [gd_scene format=3 uid="uid://claga5mxwiqe8"]
 
 [ext_resource type="Script" uid="uid://beoxabnij4ddl" path="res://Escenas/EntidadRF.gd" id="2_d5ptn"]
+[ext_resource type="Texture2D" uid="uid://baa7x1mult6rt" path="res://icon.svg" id="2_mtudk"]
 [ext_resource type="AudioStream" uid="uid://bmvh4rpr52riu" path="res://Sonidos/Pasos 1.mp3" id="3_t2416"]
-[ext_resource type="Texture2D" uid="uid://c71tno6gq23o4" path="res://assets/Enemy/Enemy Walk-sheet.png" id="3_u0xnn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5ptn"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ltf4u"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(0, 0, 600, 600)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6p5ua"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(600, 0, 600, 600)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_slgkj"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(1200, 0, 600, 600)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d3180"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(1800, 0, 600, 600)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4a5i6"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(2400, 0, 600, 600)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pcd6f"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(3000, 0, 600, 600)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cg7tj"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(3600, 0, 600, 600)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xlwoe"]
-atlas = ExtResource("3_u0xnn")
-region = Rect2(4200, 0, 600, 600)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ki25j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ltf4u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6p5ua")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_slgkj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d3180")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4a5i6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pcd6f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cg7tj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xlwoe")
-}],
-"loop": true,
-"name": &"Entidad Walk",
-"speed": 6.0
-}]
 
 [node name="EntidadRF" type="CharacterBody2D" unique_id=761511611]
 script = ExtResource("2_d5ptn")
@@ -76,15 +12,10 @@ script = ExtResource("2_d5ptn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1891812425]
 shape = SubResource("CircleShape2D_d5ptn")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=849614606]
+texture = ExtResource("2_mtudk")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1294454382]
 stream = ExtResource("3_t2416")
 autoplay = true
 max_distance = 350.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=982944711]
-z_index = 3
-rotation = 1.5707964
-scale = Vector2(0.32001427, 0.30266145)
-sprite_frames = SubResource("SpriteFrames_ki25j")
-animation = &"Entidad Walk"
-frame_progress = 0.66411376
