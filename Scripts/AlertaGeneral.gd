@@ -10,7 +10,7 @@ func _ready() -> void:
 	nivelAlerta = 0
 	canvasPerder = get_tree().get_first_node_in_group("CanvasDerrota")
 	barra = get_tree().get_first_node_in_group("BarraAlerta")
-	canvasPerder.visible = false
+	#canvasPerder.visible = false
 
 
 func _process(delta: float):
