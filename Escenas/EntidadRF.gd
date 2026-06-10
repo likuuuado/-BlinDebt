@@ -30,6 +30,7 @@ var detectando: bool = false
 var puntosAlerta: int
 
 func _ready():
+	$AnimatedSprite2D.play("Entidad Walk")
 	pathFollow = get_parent()
 	pathPos = pathFollow.global_position 
 	player = get_tree().get_first_node_in_group("player")
