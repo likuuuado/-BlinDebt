@@ -1,10 +1,193 @@
 [gd_scene format=3 uid="uid://ni1omdi8bfxr"]
 
-[ext_resource type="Texture2D" uid="uid://ynek4qlwcslf" path="res://assets/money asset.png" id="1_mpdmi"]
 [ext_resource type="Script" uid="uid://cp47028gknnjt" path="res://Escenas/Items/money.gd" id="1_p7joc"]
+[ext_resource type="Texture2D" uid="uid://x1k2jdpag6n2" path="res://assets/Items/Dinero-sheet.png" id="2_p7joc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7joc"]
 radius = 39.051247
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7joc"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(0, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvmyv"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvtga"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(1200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isdte"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(1800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fx4n"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(2400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iyb5"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(3000, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g312s"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(3600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5b1t"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(4200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5x2v"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(4800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa4c2"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(5400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktdrq"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(6000, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osu6u"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(6600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q0y5"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(7200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0og66"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(7800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ynb"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(8400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkjan"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(9000, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3oiw"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(9600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61xi2"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(10200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1neol"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(10800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nqq8"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(11400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qodx5"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(12000, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvsnm"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(12600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_testc"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(13200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sj6x"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(13800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6fsq"]
+atlas = ExtResource("2_p7joc")
+region = Rect2(14400, 0, 600, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7joc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7joc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvmyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvtga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isdte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fx4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iyb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g312s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5b1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5x2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa4c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktdrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osu6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q0y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0og66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2ynb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkjan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3oiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61xi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1neol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nqq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qodx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvsnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_testc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sj6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6fsq")
+}],
+"loop": true,
+"name": &"Idle Dinero",
+"speed": 12.0
+}]
 
 [node name="Money" type="Area2D" unique_id=558734535 groups=["items"]]
 scale = Vector2(0.5, 0.5)
@@ -13,6 +196,9 @@ script = ExtResource("1_p7joc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=862068963]
 shape = SubResource("CircleShape2D_p7joc")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1224851027]
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("1_mpdmi")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1486992618]
+position = Vector2(-2.3841858e-07, 4.7683716e-07)
+scale = Vector2(0.14874999, 0.14874999)
+sprite_frames = SubResource("SpriteFrames_p7joc")
+animation = &"Idle Dinero"
+frame_progress = 0.82315814
