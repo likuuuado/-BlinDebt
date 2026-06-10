@@ -19,3 +19,6 @@ func add_key_item(key_item_id, icon) -> void:
 	if not key_items_icon.has(icon):
 		key_items_icon.append(icon)
 		emit_signal("key_items_update", key_items_icon)
+
+func has_key_item(key_item_id: String):
+	return key_items_id.has(key_item_id)

@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bl2ds1traayo1" path="res://assets/Escenario/BlinDebt TileSet Muebles 2.png" id="9_vb0ow"]
 [ext_resource type="Script" uid="uid://b7escxxsy4wbl" path="res://Escenas/verificador_de_victoria.gd" id="10_oh7jq"]
 [ext_resource type="Texture2D" uid="uid://bb7q47yb7pknp" path="res://assets/Escenario/BlinDebt TileSet Floor.png" id="11_vb0ow"]
+[ext_resource type="PackedScene" uid="uid://okowej21wdp" path="res://Escenas/Items/candado.tscn" id="14_cd8ic"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd2pr"]
 polygon = PackedVector2Array(60, -62.5, -60, -60, -62.5, 55, 70, 62.5)
@@ -3379,8 +3380,29 @@ z_index = 2
 position = Vector2(459, 523)
 scale = Vector2(0.5, 0.5)
 priority = 1
-key_item_id = "green__key"
+key_item_id = "green_key"
 tipo = 3
+
+[node name="Candado" type="Node" parent="." unique_id=535707902]
+
+[node name="Candado" parent="Candado" unique_id=201856953 instance=ExtResource("14_cd8ic")]
+position = Vector2(600, 365)
+scale = Vector2(2, 2)
+
+[node name="Candado2" parent="Candado" unique_id=1733314702 instance=ExtResource("14_cd8ic")]
+position = Vector2(518, 285)
+scale = Vector2(2, 2)
+tipo = 3
+
+[node name="Candado3" parent="Candado" unique_id=1816030002 instance=ExtResource("14_cd8ic")]
+position = Vector2(438, 284)
+scale = Vector2(2, 2)
+tipo = 2
+
+[node name="Candado4" parent="Candado" unique_id=1534568483 instance=ExtResource("14_cd8ic")]
+position = Vector2(356, 285)
+scale = Vector2(2, 2)
+tipo = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1422715817]
 visible = false
