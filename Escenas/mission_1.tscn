@@ -3046,7 +3046,6 @@ size = Vector2(129, 115)
 [node name="mission 1" type="Node" unique_id=1861232039]
 
 [node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
-visible = false
 position = Vector2(91, 481)
 scale = Vector2(0.3, 0.3)
 
@@ -3262,7 +3261,7 @@ tile_set = SubResource("TileSet_kp6py")
 
 [node name="Money" parent="Entorno" unique_id=558734535 instance=ExtResource("5_c120i")]
 z_index = 2
-position = Vector2(764, 539)
+position = Vector2(758, 506)
 priority = 1
 value = 15
 
@@ -3350,12 +3349,38 @@ position = Vector2(2685, 38)
 priority = 1
 value = 8
 
-[node name="Keys" parent="Entorno" unique_id=1584546891 instance=ExtResource("4_qr8xh")]
+[node name="Llaves" type="Node" parent="Entorno" unique_id=1054046357]
+
+[node name="Key Amarilla" parent="Entorno/Llaves" unique_id=1584546891 instance=ExtResource("4_qr8xh")]
 z_index = 2
-position = Vector2(2696, -842)
+position = Vector2(371, 382)
 scale = Vector2(0.5, 0.5)
 priority = 1
-key_item_id = "Key1"
+key_item_id = "yellow_key"
+
+[node name="Key Roja" parent="Entorno/Llaves" unique_id=1792427020 instance=ExtResource("4_qr8xh")]
+z_index = 2
+position = Vector2(443, 448)
+scale = Vector2(0.5, 0.5)
+priority = 1
+key_item_id = "red_key"
+tipo = 1
+
+[node name="Key Azul" parent="Entorno/Llaves" unique_id=1593335253 instance=ExtResource("4_qr8xh")]
+z_index = 2
+position = Vector2(384, 503)
+scale = Vector2(0.5, 0.5)
+priority = 1
+key_item_id = "blue_key"
+tipo = 2
+
+[node name="Key Verde" parent="Entorno/Llaves" unique_id=562829403 instance=ExtResource("4_qr8xh")]
+z_index = 2
+position = Vector2(459, 523)
+scale = Vector2(0.5, 0.5)
+priority = 1
+key_item_id = "green__key"
+tipo = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1422715817]
 visible = false
