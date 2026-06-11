@@ -1,23 +1,33 @@
 extends Control
 
-@onready var money_label: Label = $MoneyLabel
-@onready var key_items_container: HBoxContainer = $KeyItemsContainer
+@onready var Inventory: Control = $Inventory
+@onready var MoneyLabel: Label = $MoneyLabel
+@onready var KeyItemsContainer: GridContainer = $Inventory/KeyItemsContainer3
 
 
 func _ready() -> void: # Conectar señales del Inventory
+	Inventory.hide()
 	Inventory.connect("money_update", Callable(self, "_on_money_update"))
 	Inventory.connect("key_items_update", Callable(self, "_on_key_items_update"))
 
+func _input(event):
+	if Input.is_action_just_pressed("toggle_inventory"):
+		if Inventory.visible:
+			Inventory.hide()
+		else:
+			Inventory.show()
+
 func _on_money_update(new_value: int) -> void:
-	money_label.text = str(new_value)
+	MoneyLabel.text = str(new_value)
 
 func _on_key_items_update(new_items_icon: Array) -> void:
-	# Limpiar el container antes de actualizar
-	for child in key_items_container.get_children():
-		child.queue_free()
-		# Crear íconos para cada id recibido
-		for icon in new_items_icon:
-			var icon_texture = TextureRect.new()
-			icon_texture.texture = load(icon)
-			icon_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			key_items_container.add_child(icon_texture)
+	# Recorre la lista de texturas que le da inventory
+	var slot_index := 0
+	for icon in new_items_icon:
+		var texture := load(icon)
+		while slot_index < KeyItemsContainer.get_child_count(): # Buscar el siguiente slot vacío
+			var slot = KeyItemsContainer.get_child(slot_index)
+			if slot is TextureRect and slot.texture == null:
+				slot.texture = texture
+				break
+			slot_index += 1

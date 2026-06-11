@@ -13,7 +13,6 @@ func _ready() -> void: # Conectar señales del Inventory
 	Inventory.connect("money_update", Callable(self, "SumarDinero"))
 	Inventory.connect("key_items_update", Callable(self, "VerificarLlave"))
 
-
 func VerificarLlave():
 	tieneLlave = true
 
