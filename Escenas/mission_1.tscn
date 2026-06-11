@@ -3048,7 +3048,6 @@ size = Vector2(232, 112.5)
 [node name="mission 1" type="Node" unique_id=1861232039]
 
 [node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
-visible = false
 position = Vector2(91, 481)
 scale = Vector2(0.3, 0.3)
 
@@ -3445,8 +3444,8 @@ texture = ExtResource("9_oh7jq")
 
 [node name="Area2D" type="Area2D" parent="Verificador de victoria" unique_id=1732179681 node_paths=PackedStringArray("canvasVictoria") groups=["WinCondition"]]
 script = ExtResource("10_oh7jq")
-canvasVictoria = NodePath("../../CanvasLayer2")
 cantidadNecesaria = 3
+canvasVictoria = NodePath("../../CanvasLayer2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Verificador de victoria/Area2D" unique_id=1809015168]
 position = Vector2(32, 513.25)

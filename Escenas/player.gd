@@ -32,18 +32,14 @@ func _physics_process(delta):
 		estamina -= cansancio * delta
 		if estamina <= 0:
 			AlertaGeneral.nivelAlerta += 3
-			#AlertaGeneral.GestionarBarrra()
+			AlertaGeneral.GestionarBarrra()
 			estamina = 0
 			estado = "caminando"
 	else: 
 		estamina += recuperacion * delta
 		estamina = min(estamina, estaminaMaxima)
 	
-<<<<<<< Updated upstream
-#	GenerarSonido()
-=======
-	#GenerarSonido()
->>>>>>> Stashed changes
+#	GenerarSonido
 	GetInput()
 	move_and_slide()
 
