@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bb7q47yb7pknp" path="res://assets/Escenario/BlinDebt TileSet Floor.png" id="11_vb0ow"]
 [ext_resource type="Texture2D" uid="uid://sffulwe7imhy" path="res://assets/key asset.png" id="14_bw8b6"]
 [ext_resource type="PackedScene" uid="uid://okowej21wdp" path="res://Escenas/Items/candado.tscn" id="14_cd8ic"]
+[ext_resource type="Script" uid="uid://c3ux1aprdhijb" path="res://Escenas/canvas_layer_3.gd" id="19_aq0fm"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd2pr"]
 polygon = PackedVector2Array(60, -62.5, -60, -60, -62.5, 55, 70, 62.5)
@@ -3246,7 +3247,7 @@ tile_set = SubResource("TileSet_kp6py")
 
 [node name="Money" parent="Entorno" unique_id=558734535 instance=ExtResource("5_c120i")]
 z_index = 2
-position = Vector2(758, 506)
+position = Vector2(758, 508)
 priority = 1
 value = 15
 
@@ -3442,7 +3443,7 @@ modulate = Color(0.67473984, 0.46126354, 0.09823055, 1)
 self_modulate = Color(0.74912435, 0.49138302, 0.021882743, 1)
 light_mask = 7
 visibility_layer = 15
-z_index = 1
+z_index = 5
 offset_left = 1080.0
 offset_top = 206.0
 offset_right = 1276.4153
@@ -3451,6 +3452,71 @@ rotation = -1.5707964
 max_value = 5.0
 value = 0.1
 script = ExtResource("3_cc327")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=2017770943 node_paths=PackedStringArray("Canvas")]
+script = ExtResource("19_aq0fm")
+Canvas = NodePath(".")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer3" unique_id=678946131]
+offset_right = 1150.0
+offset_bottom = 649.0
+color = Color(0.38170326, 0.38170323, 0.38170323, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer3" unique_id=1047430766]
+offset_left = 71.0
+offset_top = 98.0
+offset_right = 211.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 30
+text = "Controles"
+
+[node name="Label2" type="Label" parent="CanvasLayer3" unique_id=274062227]
+offset_left = 111.0
+offset_top = 145.0
+offset_right = 402.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 20
+text = "WASD o Flechas para moverse"
+
+[node name="Label3" type="Label" parent="CanvasLayer3" unique_id=1209271078]
+offset_left = 110.0
+offset_top = 178.0
+offset_right = 762.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 20
+text = "Mover mouse para iluminar y hacer click en obejtos para agarrarlos"
+
+[node name="Label4" type="Label" parent="CanvasLayer3" unique_id=1683485446]
+offset_left = 111.0
+offset_top = 209.0
+offset_right = 633.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 20
+text = "Tab o 0 en el pad numerico para abrir el inventario"
+
+[node name="Label5" type="Label" parent="CanvasLayer3" unique_id=271763111]
+offset_left = 85.0
+offset_top = 287.0
+offset_right = 201.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 30
+text = "Objetivo"
+
+[node name="Label6" type="Label" parent="CanvasLayer3" unique_id=1937789308]
+offset_left = 120.0
+offset_top = 337.0
+offset_right = 581.0
+offset_bottom = 365.0
+theme_override_font_sizes/font_size = 20
+text = "Roba de las oficinas al menos $60 y sal del lugar"
+
+[node name="Label7" type="Label" parent="CanvasLayer3" unique_id=932068841]
+offset_left = 305.0
+offset_top = 585.0
+offset_right = 802.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 30
+text = "Presiona el \"espacio\" para iniciar el juego"
 
 [connection signal="button_down" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_button_down"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D/Timer" to="Entorno/enemies/CharacterBody2D" method="_on_timer_timeout"]
