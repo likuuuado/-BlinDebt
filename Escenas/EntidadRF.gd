@@ -4,6 +4,8 @@ extends CharacterBody2D
 class_name EnemigoRF
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+const flecha_indicador = preload("res://Escenas/UI/flecha_pasos.tscn")
+var flecha_jugador: Sprite2D = null
 var pathFollow
 var player
 
@@ -30,6 +32,7 @@ var detectando: bool = false
 var puntosAlerta: int
 
 func _ready():
+	add_to_group("enemigo")
 	$AnimatedSprite2D.play("Entidad Walk")
 	pathFollow = get_parent()
 	pathPos = pathFollow.global_position 
@@ -100,14 +103,14 @@ func Deteccion():
 
 func _on_area_sonido_body_entered(body: Node2D):
 	if body is Player:
-		var flecha = body.get_node_or_null("Flecha Pasos")
-		if flecha:
-			flecha.dentro_rango = true
+		flecha_jugador = flecha_indicador.instantiate() as Sprite2D
+		flecha_jugador.enemigo_objetivo = self
+		body.add_child(flecha_jugador)
 
 
 func _on_area_sonido_body_exited(body: Node2D):
 	if body is Player:
-		var flecha = body.get_node_or_null("Flecha Pasos")
-		if flecha:
-			flecha.dentro_rango = false
+		if is_instance_valid(flecha_jugador):
+			flecha_jugador.queue_free()
+			flecha_jugador = null
 	

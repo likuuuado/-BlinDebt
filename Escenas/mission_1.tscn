@@ -3041,6 +3041,12 @@ _data = {
 }
 point_count = 9
 
+[sub_resource type="Curve2D" id="Curve2D_cd8ic"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 429, -28, 0, 0, 0, 0, 424, -714, 0, 0, 0, 0, 521, -722, 0, 0, 0, 0, 521, -42, 0, 0, 0, 0, 429, -28)
+}
+point_count = 5
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6de0"]
 size = Vector2(129, 115)
 
@@ -3408,13 +3414,15 @@ tipo = 1
 visible = false
 color = Color(0.073891945, 0.1378426, 0.114856996, 1)
 
-[node name="Path2D" type="Path2D" parent="." unique_id=59464609]
+[node name="Enemigo Movil" type="Node" parent="." unique_id=1264495618]
+
+[node name="EM 1" type="Path2D" parent="Enemigo Movil" unique_id=59464609]
 curve = SubResource("Curve2D_x6de0")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=2016104951]
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemigo Movil/EM 1" unique_id=2016104951]
 position = Vector2(316, 85)
 
-[node name="EntidadRF" parent="Path2D/PathFollow2D" unique_id=761511611 node_paths=PackedStringArray("linternaVision", "tiempoDeteccion", "canvasPerder") instance=ExtResource("8_3fhh2")]
+[node name="EntidadRF" parent="Enemigo Movil/EM 1/PathFollow2D" unique_id=761511611 node_paths=PackedStringArray("linternaVision", "tiempoDeteccion", "canvasPerder") instance=ExtResource("8_3fhh2")]
 z_index = 1
 scale = Vector2(0.5, 0.5)
 up_direction = Vector2(1, 0)
@@ -3422,20 +3430,37 @@ linternaVision = NodePath("PointLight2D")
 color1 = Color(0.8059726, 0, 0, 1)
 color2 = Color(0.7953644, 0, 0, 1)
 tiempoDeteccion = NodePath("Timer")
-canvasPerder = NodePath("../../../CanvasLayer")
+canvasPerder = NodePath("../../../../CanvasLayer")
 tiempoAlerta = 2.0
 angulo = 70.0
 speed = 50.0
 direction = Vector2(1, 0)
 
-[node name="PointLight2D" type="PointLight2D" parent="Path2D/PathFollow2D/EntidadRF" unique_id=1625854450]
+[node name="PointLight2D" type="PointLight2D" parent="Enemigo Movil/EM 1/PathFollow2D/EntidadRF" unique_id=1625854450]
 z_index = 1
 position = Vector2(300, -2)
 energy = 6.9
 shadow_enabled = true
 texture = ExtResource("9_oh7jq")
 
-[node name="Timer" type="Timer" parent="Path2D/PathFollow2D/EntidadRF" unique_id=1906456892]
+[node name="Timer" type="Timer" parent="Enemigo Movil/EM 1/PathFollow2D/EntidadRF" unique_id=1906456892]
+
+[node name="Path2D" type="Path2D" parent="Enemigo Movil" unique_id=1617153090]
+curve = SubResource("Curve2D_cd8ic")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemigo Movil/Path2D" unique_id=4054482]
+position = Vector2(429, -28)
+rotation = -1.5780848
+
+[node name="EntidadRF" parent="Enemigo Movil/Path2D/PathFollow2D" unique_id=1341337453 node_paths=PackedStringArray("linternaVision", "tiempoDeteccion", "canvasPerder") instance=ExtResource("8_3fhh2")]
+scale = Vector2(0.5, 0.5)
+linternaVision = NodePath("PointLight2D")
+tiempoDeteccion = NodePath("Timer")
+canvasPerder = NodePath("../../../../CanvasLayer2")
+
+[node name="Timer" type="Timer" parent="Enemigo Movil/Path2D/PathFollow2D/EntidadRF" unique_id=557699383]
+
+[node name="PointLight2D" type="PointLight2D" parent="Enemigo Movil/Path2D/PathFollow2D/EntidadRF" unique_id=1478233785]
 
 [node name="Verificador de victoria" type="Node2D" parent="." unique_id=1496136117 node_paths=PackedStringArray("canvasVictoria")]
 script = ExtResource("10_oh7jq")
@@ -3457,5 +3482,5 @@ shape = SubResource("RectangleShape2D_x6de0")
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D7/Timer" to="Entorno/enemies/CharacterBody2D7" method="_on_timer_timeout"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D8/Timer" to="Entorno/enemies/CharacterBody2D8" method="_on_timer_timeout"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D9/Timer" to="Entorno/enemies/CharacterBody2D9" method="_on_timer_timeout"]
-[connection signal="timeout" from="Path2D/PathFollow2D/EntidadRF/Timer" to="Path2D/PathFollow2D/EntidadRF" method="_on_timer_timeout"]
+[connection signal="timeout" from="Enemigo Movil/EM 1/PathFollow2D/EntidadRF/Timer" to="Enemigo Movil/EM 1/PathFollow2D/EntidadRF" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Verificador de victoria/Area2D" to="Verificador de victoria" method="_on_area_2d_body_entered"]
