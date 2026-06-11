@@ -232,5 +232,7 @@ offset_right = 1137.0
 offset_bottom = 637.0
 text = "UI DESING IS MY PASSION"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=625649932 groups=["CanvasDerrota"]]
+
 [connection signal="button_down" from="Fondo/BSalir" to="." method="_on_b_salir_button_down"]
 [connection signal="button_down" from="Fondo/BJugar" to="." method="_on_b_jugar_button_down"]

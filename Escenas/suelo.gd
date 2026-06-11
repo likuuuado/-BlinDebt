@@ -1,4 +1,5 @@
 extends TileMapLayer
 
 func _ready() -> void:
-	SonidoPasos.tileMaps.push_back(self)
+	pass
+#	SonidoPasos.tileMaps.push_back(self)
