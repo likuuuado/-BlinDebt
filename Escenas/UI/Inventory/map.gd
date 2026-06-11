@@ -11,13 +11,13 @@ func _ready():
 	for j in range(int(grid_size.y) + 1): #Líneas horizontales
 		var y = j * cell_h
 		for i in range(int(grid_size.x)):
-			var seg = { "p1": Vector2(i * cell_w, y), "p2": Vector2((i+1) * cell_w, y), "color": Color.BLACK }
+			var seg = { "p1": Vector2(i * cell_w, y), "p2": Vector2((i+1) * cell_w, y), "color": Color.GRAY }
 			segments.append(seg)
 
 	for i in range(int(grid_size.x) + 1): #Líneas verticales
 		var x = i * cell_w
 		for j in range(int(grid_size.y)):
-			var seg = { "p1": Vector2(x, j * cell_h), "p2": Vector2(x, (j+1) * cell_h), "color": Color.BLACK }
+			var seg = { "p1": Vector2(x, j * cell_h), "p2": Vector2(x, (j+1) * cell_h), "color": Color.GRAY }
 			segments.append(seg)
 	queue_redraw()
 
@@ -31,11 +31,11 @@ func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		var pos = event.position
 		for seg in segments:
-			if _is_near_segment(pos, seg["p1"], seg["p2"], 6):  # tolerancia 6px
+			if _is_near_segment(pos, seg["p1"], seg["p2"], 6):  # tolerancia 6 px
 				if event.button_index == MOUSE_BUTTON_LEFT:
-					seg["color"] = Color.RED
-				elif event.button_index == MOUSE_BUTTON_RIGHT:
 					seg["color"] = Color.BLACK
+				elif event.button_index == MOUSE_BUTTON_RIGHT:
+					seg["color"] = Color.GRAY
 				queue_redraw()
 				break
 

@@ -26,7 +26,6 @@ size = Vector2(129, 115)
 [node name="mission 1" type="Node" unique_id=1861232039]
 
 [node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
-visible = false
 position = Vector2(91, 481)
 scale = Vector2(0.5, 0.5)
 
