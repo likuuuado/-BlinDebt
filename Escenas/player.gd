@@ -39,7 +39,7 @@ func _physics_process(delta):
 		estamina += recuperacion * delta
 		estamina = min(estamina, estaminaMaxima)
 	
-	GenerarSonido()
+#	GenerarSonido()
 	GetInput()
 	move_and_slide()
 
@@ -88,5 +88,5 @@ func PararAnimacion():
 	animation_player.stop()
 	audio_stream_player_2d.stop()
 
-func GenerarSonido(): #esto no sirvio pero la idea es hacerlo andar 
-	SonidoPasos.GenerarSonido(global_position)
+#func GenerarSonido(): #esto no sirvio pero la idea es hacerlo andar 
+#	SonidoPasos.GenerarSonido(global_position)

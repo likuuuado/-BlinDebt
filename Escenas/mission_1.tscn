@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bl2ds1traayo1" path="res://assets/Escenario/BlinDebt TileSet Muebles 2.png" id="9_vb0ow"]
 [ext_resource type="Script" uid="uid://b7escxxsy4wbl" path="res://Escenas/verificador_de_victoria.gd" id="10_oh7jq"]
 [ext_resource type="Texture2D" uid="uid://bb7q47yb7pknp" path="res://assets/Escenario/BlinDebt TileSet Floor.png" id="11_vb0ow"]
+[ext_resource type="Texture2D" uid="uid://sffulwe7imhy" path="res://assets/key asset.png" id="14_bw8b6"]
 [ext_resource type="PackedScene" uid="uid://okowej21wdp" path="res://Escenas/Items/candado.tscn" id="14_cd8ic"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd2pr"]
@@ -3042,11 +3043,12 @@ _data = {
 point_count = 9
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6de0"]
-size = Vector2(129, 115)
+size = Vector2(232, 112.5)
 
 [node name="mission 1" type="Node" unique_id=1861232039]
 
 [node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
+visible = false
 position = Vector2(91, 481)
 scale = Vector2(0.3, 0.3)
 
@@ -3069,7 +3071,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1340143500 groups=["BarraAlerta"]]
 process_mode = 3
-visible = false
 modulate = Color(0.67473984, 0.46126354, 0.09823055, 1)
 self_modulate = Color(0.74912435, 0.49138302, 0.021882743, 1)
 light_mask = 7
@@ -3358,6 +3359,7 @@ position = Vector2(2698, -843)
 scale = Vector2(0.5, 0.5)
 priority = 1
 key_item_id = "yellow_key"
+icon = ExtResource("14_bw8b6")
 
 [node name="Key Roja" parent="Entorno/Llaves" unique_id=1792427020 instance=ExtResource("4_qr8xh")]
 z_index = 2
@@ -3365,6 +3367,7 @@ position = Vector2(923, -125)
 scale = Vector2(0.5, 0.5)
 priority = 1
 key_item_id = "red_key"
+icon = ExtResource("14_bw8b6")
 tipo = 1
 
 [node name="Key Azul" parent="Entorno/Llaves" unique_id=1593335253 instance=ExtResource("4_qr8xh")]
@@ -3373,6 +3376,7 @@ position = Vector2(2465, -1316)
 scale = Vector2(0.5, 0.5)
 priority = 1
 key_item_id = "blue_key"
+icon = ExtResource("14_bw8b6")
 tipo = 2
 
 [node name="Key Verde" parent="Entorno/Llaves" unique_id=562829403 instance=ExtResource("4_qr8xh")]
@@ -3381,6 +3385,7 @@ position = Vector2(2748, 19)
 scale = Vector2(0.5, 0.5)
 priority = 1
 key_item_id = "green_key"
+icon = ExtResource("14_bw8b6")
 tipo = 3
 
 [node name="Candado" type="Node" parent="." unique_id=535707902]
@@ -3437,14 +3442,15 @@ texture = ExtResource("9_oh7jq")
 
 [node name="Timer" type="Timer" parent="Path2D/PathFollow2D/EntidadRF" unique_id=1906456892]
 
-[node name="Verificador de victoria" type="Node2D" parent="." unique_id=1496136117 node_paths=PackedStringArray("canvasVictoria")]
-script = ExtResource("10_oh7jq")
-canvasVictoria = NodePath("../CanvasLayer")
+[node name="Verificador de victoria" type="Node2D" parent="." unique_id=1496136117]
 
-[node name="Area2D" type="Area2D" parent="Verificador de victoria" unique_id=1732179681]
+[node name="Area2D" type="Area2D" parent="Verificador de victoria" unique_id=1732179681 node_paths=PackedStringArray("canvasVictoria") groups=["WinCondition"]]
+script = ExtResource("10_oh7jq")
+canvasVictoria = NodePath("../../CanvasLayer2")
+cantidadNecesaria = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Verificador de victoria/Area2D" unique_id=1809015168]
-position = Vector2(-19.5, 512)
+position = Vector2(32, 513.25)
 shape = SubResource("RectangleShape2D_x6de0")
 
 [connection signal="button_down" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_button_down"]
@@ -3458,4 +3464,4 @@ shape = SubResource("RectangleShape2D_x6de0")
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D8/Timer" to="Entorno/enemies/CharacterBody2D8" method="_on_timer_timeout"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D9/Timer" to="Entorno/enemies/CharacterBody2D9" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path2D/PathFollow2D/EntidadRF/Timer" to="Path2D/PathFollow2D/EntidadRF" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Verificador de victoria/Area2D" to="Verificador de victoria" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Verificador de victoria/Area2D" to="Verificador de victoria/Area2D" method="_on_body_entered"]
