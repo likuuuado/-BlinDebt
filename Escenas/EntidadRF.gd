@@ -96,3 +96,18 @@ func Deteccion():
 		return true
 	else:
 		return false
+
+
+func _on_area_sonido_body_entered(body: Node2D):
+	if body is Player:
+		var flecha = body.get_node_or_null("Flecha Pasos")
+		if flecha:
+			flecha.dentro_rango = true
+
+
+func _on_area_sonido_body_exited(body: Node2D):
+	if body is Player:
+		var flecha = body.get_node_or_null("Flecha Pasos")
+		if flecha:
+			flecha.dentro_rango = false
+	
