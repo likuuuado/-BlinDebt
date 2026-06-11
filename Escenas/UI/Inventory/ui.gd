@@ -1,7 +1,7 @@
 extends Control
 
 @onready var Inventory: Control = $Inventory
-@onready var MoneyLabel: Label = $MoneyLabel
+@onready var MoneyLabel: Label = $Gameplay/MoneyLabel
 @onready var KeyItemsContainer: GridContainer = $Inventory/KeyItemsContainer3
 
 

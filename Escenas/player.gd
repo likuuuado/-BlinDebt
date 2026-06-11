@@ -24,6 +24,7 @@ func _ready() -> void:
 	audioListener.make_current()
 	estado = "caminando"
 	estamina = estaminaMaxima
+	AlertaGeneral.BuscarBarra()
 
 func _physics_process(delta):
 	posicionLinterna = get_global_mouse_position()

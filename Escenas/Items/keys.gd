@@ -1,7 +1,6 @@
 extends "res://Scripts/ItemBase.gd"
 
 @export var key_item_id: String
-#@onready var icon = preload("res://assets/key asset.png")
 @export var icon: Texture2D = preload("res://assets/key asset.png")
 @export var tipo: LlavesTipo.TipoLlave
 

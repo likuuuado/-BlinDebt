@@ -23,3 +23,7 @@ func _process(delta: float):
 
 func GestionarBarrra():
 	barra.ActualizarBarra(alertaMaxima, nivelAlerta)
+
+func BuscarBarra():
+	if barra == null:
+		barra = get_tree().get_first_node_in_group("BarraAlerta")
