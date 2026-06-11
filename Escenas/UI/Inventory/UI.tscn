@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dt8qcpycifco" path="res://assets/g4.png" id="7_imutq"]
 [ext_resource type="Script" uid="uid://2l65s2carj2b" path="res://Scripts/Pins.gd" id="8_eerjq"]
 [ext_resource type="Texture2D" uid="uid://yheum00pmqcm" path="res://assets/g8.png" id="8_k1l1u"]
+[ext_resource type="Texture2D" uid="uid://x1k2jdpag6n2" path="res://assets/Items/Dinero-sheet.png" id="13_tomvf"]
 
 [node name="UI" type="Control" unique_id=912142539]
 layout_mode = 3
@@ -24,10 +25,20 @@ script = ExtResource("1_kd8lm")
 
 [node name="MoneyLabel" type="Label" parent="." unique_id=2021547673]
 layout_mode = 1
-offset_right = 163.0
-offset_bottom = 53.0
+anchors_preset = -1
+anchor_left = 0.07300001
+anchor_top = 0.011000001
+anchor_right = 0.21400002
+anchor_bottom = 0.093
+offset_left = -0.0960083
+offset_top = -0.12800074
+offset_right = 0.47198486
+offset_bottom = -0.26399994
+text = "asdasda"
 
 [node name="Inventory" type="Control" parent="." unique_id=1011453318]
+visible = false
+z_index = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -334,3 +345,9 @@ offset_left = -43.666992
 offset_top = -67.00001
 offset_right = 42.99951
 offset_bottom = 66.333336
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=561359318]
+position = Vector2(45, 44)
+scale = Vector2(0.14833333, 0.14833333)
+texture = ExtResource("13_tomvf")
+hframes = 25

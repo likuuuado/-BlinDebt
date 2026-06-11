@@ -1,7 +1,7 @@
 extends Control
 
 @onready var Inventory: Control = $Inventory
-@onready var money_label: Label = $MoneyLabel
+@onready var MoneyLabel: Label = $MoneyLabel
 @onready var KeyItemsContainer: GridContainer = $Inventory/KeyItemsContainer3
 
 
@@ -18,7 +18,7 @@ func _input(event):
 			Inventory.show()
 
 func _on_money_update(new_value: int) -> void:
-	money_label.text = str(new_value)
+	MoneyLabel.text = str(new_value)
 
 func _on_key_items_update(new_items_icon: Array) -> void:
 	# Recorre la lista de texturas que le da inventory

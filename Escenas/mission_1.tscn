@@ -3068,22 +3068,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="UI" parent="CanvasLayer" unique_id=912142539 instance=ExtResource("6_c120i")]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1340143500 groups=["BarraAlerta"]]
-process_mode = 3
-modulate = Color(0.67473984, 0.46126354, 0.09823055, 1)
-self_modulate = Color(0.74912435, 0.49138302, 0.021882743, 1)
-light_mask = 7
-visibility_layer = 15
-z_index = 1
-offset_left = 1080.0
-offset_top = 206.0
-offset_right = 1276.4153
-offset_bottom = 245.93164
-rotation = -1.5707964
-max_value = 5.0
-value = 0.1
-script = ExtResource("3_cc327")
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1309768734 groups=["CanvasDerrota"]]
 process_mode = 3
 visible = false
@@ -3451,6 +3435,22 @@ cantidadNecesaria = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Verificador de victoria/Area2D" unique_id=1809015168]
 position = Vector2(32, 513.25)
 shape = SubResource("RectangleShape2D_x6de0")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=697570430 groups=["BarraAlerta"]]
+process_mode = 3
+modulate = Color(0.67473984, 0.46126354, 0.09823055, 1)
+self_modulate = Color(0.74912435, 0.49138302, 0.021882743, 1)
+light_mask = 7
+visibility_layer = 15
+z_index = 1
+offset_left = 1080.0
+offset_top = 206.0
+offset_right = 1276.4153
+offset_bottom = 245.93164
+rotation = -1.5707964
+max_value = 5.0
+value = 0.1
+script = ExtResource("3_cc327")
 
 [connection signal="button_down" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_button_down"]
 [connection signal="timeout" from="Entorno/enemies/CharacterBody2D/Timer" to="Entorno/enemies/CharacterBody2D" method="_on_timer_timeout"]
