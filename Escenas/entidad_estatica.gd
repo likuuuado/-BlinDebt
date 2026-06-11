@@ -14,6 +14,8 @@ var angleRads : float
 @export var angulo: float = 60
 @export var lenght: float = 400
 @export var direction = Vector2.UP
+var puntosAlerta: int
+
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -37,10 +39,14 @@ func _on_timer_timeout():
 		$Sprite2D.modulate = Color.YELLOW
 		tiempoAlerta = 4
 		print("Enemigo alerta")
+		puntosAlerta = 2
+		AlertaGeneral.nivelAlerta += puntosAlerta
 		return
 	elif $Sprite2D.modulate == Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.RED
 	print("Jugador detectado")
+	puntosAlerta = 1
+	AlertaGeneral.nivelAlerta += puntosAlerta
 	canvasPerder.visible = true
 	get_tree().paused = true
 

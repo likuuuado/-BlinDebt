@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b7mbqjm2auuva"]
+
+[ext_resource type="Script" uid="uid://ct2ofcexsvxep" path="res://Scripts/Mision 2 Scripts/ZonaDescarte.gd" id="1_sbuba"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pq5q1"]
+
+[node name="DescarteEvidencia" type="Area2D" unique_id=821534450 groups=["DescarteEvidencia"]]
+script = ExtResource("1_sbuba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403766604]
+shape = SubResource("CircleShape2D_pq5q1")

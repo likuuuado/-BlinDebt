@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 class_name EnemigoRF
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var pathFollow
 var player
@@ -26,7 +27,10 @@ var pathPos: Vector2
 
 var detectando: bool = false
 
+var puntosAlerta: int
+
 func _ready():
+	$AnimatedSprite2D.play("Entidad Walk")
 	pathFollow = get_parent()
 	pathPos = pathFollow.global_position 
 	player = get_tree().get_first_node_in_group("player")
@@ -48,9 +52,11 @@ func _process(delta):
 		tiempoDeteccion.wait_time = tiempoAlerta
 		if tiempoDeteccion.is_stopped():
 			tiempoDeteccion.start()
+			audio_stream_player_2d.volume_db = -100
 	else:
 		tiempoDeteccion.wait_time = tiempoAlerta
 		detectando = false
+		audio_stream_player_2d.volume_db = 0
 		tiempoDeteccion.stop()
 
 
@@ -59,11 +65,15 @@ func _on_timer_timeout():
 	if $Sprite2D.modulate != Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.YELLOW
 		tiempoAlerta = 4
+		puntosAlerta = 3
+		AlertaGeneral.nivelAlerta += puntosAlerta
 		print("Enemigo alerta")
 		return
 	elif $Sprite2D.modulate == Color.YELLOW && $Sprite2D.modulate != Color.RED:
 		$Sprite2D.modulate = Color.RED
 	print("Jugador detectado")
+	puntosAlerta = 6 
+	AlertaGeneral.nivelAlerta += puntosAlerta
 	canvasPerder.visible = true
 	get_tree().paused = true
 

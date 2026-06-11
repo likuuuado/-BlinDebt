@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c7oopls2qtqsk"]
+
+[ext_resource type="Texture2D" uid="uid://cfeowg1eo5scf" path="res://assets/Escenario/BlinDebt Wall TileSet.png" id="1_586bq"]
+[ext_resource type="Script" uid="uid://80uu1f64muvr" path="res://Escenas/suelo.gd" id="2_hmgs2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmgs2"]
+texture = ExtResource("1_586bq")
+texture_region_size = Vector2i(256, 256)
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/custom_data_0 = "Caminando"
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0/terrains_peering_bit/left_side = 0
+0:1/0/terrains_peering_bit/top_left_corner = 0
+0:1/0/custom_data_0 = "Caminando"
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0/custom_data_0 = "Caminando"
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/custom_data_0 = "Caminando"
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/custom_data_0 = "Caminando"
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/custom_data_0 = "Caminando"
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/custom_data_0 = "Caminando"
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/custom_data_0 = "Caminando"
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/custom_data_0 = "Caminando"
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/custom_data_0 = "Caminando"
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/custom_data_0 = "Caminando"
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrain = 0
+0:3/0/terrains_peering_bit/bottom_side = 0
+0:3/0/terrains_peering_bit/bottom_left_corner = 0
+0:3/0/terrains_peering_bit/left_side = 0
+0:3/0/terrains_peering_bit/top_left_corner = 0
+0:3/0/terrains_peering_bit/top_side = 0
+0:3/0/custom_data_0 = "Caminando"
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/custom_data_0 = "Caminando"
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/custom_data_0 = "Caminando"
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/custom_data_0 = "Caminando"
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/custom_data_0 = "Caminando"
+
+[sub_resource type="TileSet" id="TileSet_ujst0"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Piso"
+terrain_set_0/terrain_0/color = Color(0.49995556, 0.99735785, 0.25030932, 1)
+custom_data_layer_0/name = "SonidoPasos"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_hmgs2")
+
+[node name="Suelo" type="TileMapLayer" unique_id=946898236]
+tile_set = SubResource("TileSet_ujst0")
+script = ExtResource("2_hmgs2")

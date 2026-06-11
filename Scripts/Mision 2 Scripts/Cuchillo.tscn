@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvhghf3tuaapn"]
+
+[ext_resource type="Script" uid="uid://byb7t461mjfs0" path="res://Scripts/Mision 2 Scripts/Cuchillo.gd" id="1_ic666"]
+[ext_resource type="Texture2D" uid="uid://bo4ec64hrpu6y" path="res://assets/Items/Cuchillo BlinDebt.png" id="2_3db8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_huirq"]
+radius = 276.06158
+
+[node name="Cuchillo" type="Area2D" unique_id=152607070 groups=["items"]]
+process_priority = 1
+light_mask = 3
+visibility_layer = 3
+collision_layer = 3
+collision_mask = 3
+priority = 2
+script = ExtResource("1_ic666")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=316562932]
+texture = ExtResource("2_3db8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=673939286]
+shape = SubResource("CircleShape2D_huirq")
