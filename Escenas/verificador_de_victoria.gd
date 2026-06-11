@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 var jugador
 @export var canvasVictoria: CanvasLayer
 var tieneLlave: bool
@@ -6,6 +6,7 @@ var cantidadDinero: int
 @export var cantidadNecesaria: int
 
 func _ready() -> void: # Conectar señales del Inventory
+	jugador = get_tree().get_first_node_in_group("player")
 	tieneLlave = false
 	canvasVictoria.visible = false
 	Inventory.connect("money_update", Callable(self, "SumarDinero"))
@@ -17,9 +18,10 @@ func VerificarLlave():
 
 func SumarDinero(new_value: int):
 	cantidadDinero += new_value
+	print(cantidadDinero)
 
 
 
-func _on_area_2d_body_entered(body: Player) -> void:
-	if tieneLlave == true && cantidadDinero == cantidadNecesaria:
-		canvasVictoria.visible 
+func _on_body_entered(body: Player):
+	if cantidadDinero >= cantidadNecesaria:
+		canvasVictoria.visible = true
