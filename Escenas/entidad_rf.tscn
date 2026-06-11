@@ -70,7 +70,10 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="EntidadRF" type="CharacterBody2D" unique_id=761511611]
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2416"]
+radius = 596.1015
+
+[node name="EntidadRF" type="CharacterBody2D" unique_id=761511611 groups=["enemigo"]]
 script = ExtResource("2_d5ptn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1891812425]
@@ -88,3 +91,11 @@ scale = Vector2(0.32001427, 0.30266145)
 sprite_frames = SubResource("SpriteFrames_ki25j")
 animation = &"Entidad Walk"
 frame_progress = 0.66411376
+
+[node name="AreaSonido" type="Area2D" parent="." unique_id=1821965526]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSonido" unique_id=705650700]
+shape = SubResource("CircleShape2D_t2416")
+
+[connection signal="body_entered" from="AreaSonido" to="." method="_on_area_sonido_body_entered"]
+[connection signal="body_exited" from="AreaSonido" to="." method="_on_area_sonido_body_exited"]

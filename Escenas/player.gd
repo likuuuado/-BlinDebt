@@ -39,7 +39,7 @@ func _physics_process(delta):
 		estamina += recuperacion * delta
 		estamina = min(estamina, estaminaMaxima)
 	
-#	GenerarSonido()
+#	GenerarSonido
 	GetInput()
 	move_and_slide()
 

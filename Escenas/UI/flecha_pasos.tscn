@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bcq2y3lu4idoi"]
+
+[ext_resource type="Texture2D" uid="uid://dchrxa5hhf5oh" path="res://assets/Enemy/Sonido Visual Pasos.png" id="1_x3msq"]
+[ext_resource type="Script" uid="uid://p0cey4d4luh" path="res://Scripts/flecha_pasos.gd" id="2_ppure"]
+
+[node name="Flecha Pasos" type="Sprite2D" unique_id=1870576769]
+z_index = 2
+scale = Vector2(1.2204167, 1.2204167)
+texture = ExtResource("1_x3msq")
+script = ExtResource("2_ppure")

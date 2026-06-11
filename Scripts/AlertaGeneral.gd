@@ -19,7 +19,7 @@ func _process(delta: float):
 	if nivelAlerta >= alertaMaxima:
 		canvasPerder.visible = true
 		
-		get_tree().paused = true
+		
 
 func GestionarBarrra():
 	barra.ActualizarBarra(alertaMaxima, nivelAlerta)

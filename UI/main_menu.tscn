@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bls57hdy768fu"]
 
 [ext_resource type="Script" uid="uid://di38xjdeyawdn" path="res://UI/main_menu.gd" id="1_p8ccj"]
+[ext_resource type="Script" uid="uid://b3q6wlaf2hglf" path="res://UI/canvas_perder.gd" id="2_tk8dj"]
 
 [sub_resource type="FontFile" id="FontFile_p8ccj"]
 subpixel_positioning = 0
@@ -232,7 +233,32 @@ offset_right = 1137.0
 offset_bottom = 637.0
 text = "UI DESING IS MY PASSION"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=625649932 groups=["CanvasDerrota"]]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1582951673 groups=["CanvasDerrota"]]
+process_mode = 3
+visible = false
+script = ExtResource("2_tk8dj")
+
+[node name="Button" type="Button" parent="CanvasLayer2" unique_id=922907191]
+z_index = 2
+offset_left = 457.0
+offset_top = 428.0
+offset_right = 649.0
+offset_bottom = 504.0
+text = "Menu"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=549986871]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.3515629, 0.3515629, 0.35156286, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer2" unique_id=662450226]
+offset_left = 345.0
+offset_top = 256.0
+offset_right = 771.0
+offset_bottom = 393.0
+theme_override_font_sizes/font_size = 100
+text = "Perdiste!"
 
 [connection signal="button_down" from="Fondo/BSalir" to="." method="_on_b_salir_button_down"]
 [connection signal="button_down" from="Fondo/BJugar" to="." method="_on_b_jugar_button_down"]
+[connection signal="button_down" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_button_down"]
