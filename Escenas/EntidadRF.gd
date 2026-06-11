@@ -26,6 +26,7 @@ var angleRads : float
 
 @export var direction = Vector2.UP
 var pathPos: Vector2
+var alerta: bool
 
 var detectando: bool = false
 
@@ -65,20 +66,19 @@ func _process(delta):
 
 func _on_timer_timeout():
 
-	if $Sprite2D.modulate != Color.YELLOW && $Sprite2D.modulate != Color.RED:
-		$Sprite2D.modulate = Color.YELLOW
+	if !alerta:
 		tiempoAlerta = 4
 		puntosAlerta = 3
 		AlertaGeneral.nivelAlerta += puntosAlerta
+		alerta = true
 		print("Enemigo alerta")
 		return
-	elif $Sprite2D.modulate == Color.YELLOW && $Sprite2D.modulate != Color.RED:
-		$Sprite2D.modulate = Color.RED
-	print("Jugador detectado")
-	puntosAlerta = 6 
-	AlertaGeneral.nivelAlerta += puntosAlerta
-	canvasPerder.visible = true
-	get_tree().paused = true
+	elif alerta == true:
+		print("Jugador detectado")
+		puntosAlerta = 6 
+		AlertaGeneral.nivelAlerta += puntosAlerta
+		canvasPerder.visible = true
+
 
 func _draw():
 	var limIzquierda = direction.rotated(-angleRads) * lenght

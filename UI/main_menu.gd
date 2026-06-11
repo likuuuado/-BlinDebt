@@ -1,12 +1,10 @@
 extends Control
-@onready var niveltesteo = preload("res://Escenas/mission_1.tscn")
 
-func _ready():
-	niveltesteo = preload("res://Escenas/mission_1.tscn")
+
 
 
 func _on_b_jugar_button_down() -> void:
-	get_tree().change_scene_to_packed(niveltesteo)
+	get_tree().change_scene_to_file("res://Escenas/mission_1.tscn")
 
 
 func _on_b_salir_button_down() -> void:
