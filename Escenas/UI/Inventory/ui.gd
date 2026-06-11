@@ -21,12 +21,11 @@ func _on_money_update(new_value: int) -> void:
 	money_label.text = str(new_value)
 
 func _on_key_items_update(new_items_icon: Array) -> void:
-	# Recorremos la lista de texturas recibidas
+	# Recorre la lista de texturas que le da inventory
 	var slot_index := 0
-	for texture_path in new_items_icon:
-		var texture := load(texture_path)
-		# Buscar el siguiente slot vacío
-		while slot_index < KeyItemsContainer.get_child_count():
+	for icon in new_items_icon:
+		var texture := load(icon)
+		while slot_index < KeyItemsContainer.get_child_count(): # Buscar el siguiente slot vacío
 			var slot = KeyItemsContainer.get_child(slot_index)
 			if slot is TextureRect and slot.texture == null:
 				slot.texture = texture
