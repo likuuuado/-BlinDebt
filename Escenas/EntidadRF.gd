@@ -4,6 +4,8 @@ extends CharacterBody2D
 class_name EnemigoRF
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+const flecha_indicador = preload("res://Escenas/UI/flecha_pasos.tscn")
+var flecha_jugador: Sprite2D = null
 var pathFollow
 var player
 
@@ -24,12 +26,14 @@ var angleRads : float
 
 @export var direction = Vector2.UP
 var pathPos: Vector2
+var alerta: bool
 
 var detectando: bool = false
 
 var puntosAlerta: int
 
 func _ready():
+	add_to_group("enemigo")
 	$AnimatedSprite2D.play("Entidad Walk")
 	pathFollow = get_parent()
 	pathPos = pathFollow.global_position 
@@ -62,20 +66,19 @@ func _process(delta):
 
 func _on_timer_timeout():
 
-	if $Sprite2D.modulate != Color.YELLOW && $Sprite2D.modulate != Color.RED:
-		$Sprite2D.modulate = Color.YELLOW
+	if !alerta:
 		tiempoAlerta = 4
 		puntosAlerta = 3
 		AlertaGeneral.nivelAlerta += puntosAlerta
+		alerta = true
 		print("Enemigo alerta")
 		return
-	elif $Sprite2D.modulate == Color.YELLOW && $Sprite2D.modulate != Color.RED:
-		$Sprite2D.modulate = Color.RED
-	print("Jugador detectado")
-	puntosAlerta = 6 
-	AlertaGeneral.nivelAlerta += puntosAlerta
-	canvasPerder.visible = true
-	get_tree().paused = true
+	elif alerta == true:
+		print("Jugador detectado")
+		puntosAlerta = 6 
+		AlertaGeneral.nivelAlerta += puntosAlerta
+		canvasPerder.visible = true
+
 
 func _draw():
 	var limIzquierda = direction.rotated(-angleRads) * lenght
@@ -96,3 +99,18 @@ func Deteccion():
 		return true
 	else:
 		return false
+
+
+func _on_area_sonido_body_entered(body: Node2D):
+	if body is Player:
+		flecha_jugador = flecha_indicador.instantiate() as Sprite2D
+		flecha_jugador.enemigo_objetivo = self
+		body.add_child(flecha_jugador)
+
+
+func _on_area_sonido_body_exited(body: Node2D):
+	if body is Player:
+		if is_instance_valid(flecha_jugador):
+			flecha_jugador.queue_free()
+			flecha_jugador = null
+	
