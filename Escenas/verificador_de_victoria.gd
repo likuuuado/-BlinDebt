@@ -4,6 +4,7 @@ var jugador
 var tieneLlave: bool
 var cantidadDinero: int
 @export var cantidadNecesaria: int
+var misionCompleta: bool
 
 func _ready() -> void: # Conectar señales del Inventory
 	jugador = get_tree().get_first_node_in_group("player")
@@ -24,4 +25,6 @@ func SumarDinero(new_value: int):
 
 func _on_body_entered(body: Player):
 	if cantidadDinero >= cantidadNecesaria:
+		canvasVictoria.visible = true
+	elif misionCompleta == true:
 		canvasVictoria.visible = true

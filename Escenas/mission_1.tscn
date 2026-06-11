@@ -3048,6 +3048,7 @@ size = Vector2(232, 112.5)
 [node name="mission 1" type="Node" unique_id=1861232039]
 
 [node name="player" parent="." unique_id=129075098 instance=ExtResource("2_opoa0")]
+visible = false
 position = Vector2(91, 481)
 scale = Vector2(0.3, 0.3)
 
@@ -3409,6 +3410,7 @@ scale = Vector2(2, 2)
 tipo = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1422715817]
+visible = false
 color = Color(0.073891945, 0.1378426, 0.114856996, 1)
 
 [node name="Path2D" type="Path2D" parent="." unique_id=59464609]

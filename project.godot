@@ -33,6 +33,7 @@ key_items=""
 item_detector=""
 CanvasDerrota=""
 BarraAlerta=""
+DescarteEvidencia=""
 
 [input]
 
