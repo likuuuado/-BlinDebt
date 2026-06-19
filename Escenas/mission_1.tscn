@@ -22,41 +22,78 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd2pr"]
 polygon = PackedVector2Array(60, -62.5, -60, -60, -62.5, 55, 70, 62.5)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bw8b6"]
+polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aq0fm"]
+polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wjt5"]
 texture = ExtResource("7_wa7l7")
 texture_region_size = Vector2i(256, 256)
 1:1/0 = 0
+1:1/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 0:0/0 = 0
-0:0/0/modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
+0:0/0/modulate = Color(0.27022174, 0.27022198, 0.27022186, 1)
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 1:0/0 = 0
+1:0/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 2:0/0 = 0
+2:0/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 3:0/0 = 0
+3:0/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 3:1/0 = 0
+3:1/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 2:1/0 = 0
+2:1/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 0:1/0 = 0
+0:1/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 0:2/0 = 0
+0:2/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 1:2/0 = 0
+1:2/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 2:2/0 = 0
+2:2/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 3:2/0 = 0
+3:2/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bw8b6")
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 3:3/0 = 0
+3:3/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+3:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_aq0fm")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 2:3/0 = 0
+2:3/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+2:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_aq0fm")
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 1:3/0 = 0
+1:3/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+1:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_aq0fm")
 1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 0:3/0 = 0
+0:3/0/modulate = Color(0.4857039, 0.4857034, 0.48570347, 1)
+0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_aq0fm")
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw8b6"]
@@ -129,6 +166,7 @@ texture_region_size = Vector2i(256, 256)
 
 [sub_resource type="TileSet" id="TileSet_xv5v5"]
 tile_size = Vector2i(256, 256)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2wjt5")
 sources/1 = SubResource("TileSetAtlasSource_bw8b6")
@@ -3065,6 +3103,7 @@ mouse_behavior_recursive = 1
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=70727444]
+visible = false
 
 [node name="UI" parent="CanvasLayer" unique_id=912142539 instance=ExtResource("6_c120i")]
 
@@ -3086,6 +3125,7 @@ script = ExtResource("3_cc327")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1309768734 groups=["CanvasDerrota"]]
 process_mode = 3
+visible = false
 script = ExtResource("7_jd2pr")
 
 [node name="Button" type="Button" parent="CanvasLayer2" unique_id=131393915]
