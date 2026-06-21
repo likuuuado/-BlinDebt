@@ -9,7 +9,9 @@ const candado_verde = preload("res://assets/Items/Candado Verde.png")
 
 var player_in_range: bool = false
 
-
+var angulo_maximo: float = 10.0
+var velocidad: float = 6
+var tiempo: float = 0
 
 func _ready():
 	connect("area_entered", Callable(self, "_on_area_entered"))
@@ -28,6 +30,23 @@ func _ready():
 		
 		LlavesTipo.TipoLlave.VERDE:
 			$Sprite2D.texture = candado_verde
+
+
+func _process(delta):
+	if Inventory.has_key_item(_get_required_key_id()):
+		tiempo += delta * velocidad
+		$Sprite2D.rotation_degrees = sin(tiempo) * angulo_maximo
+	else:
+		$Sprite2D.rotation_degrees = 0.0
+
+
+func _get_required_key_id():
+	match tipo:
+		LlavesTipo.TipoLlave.ROJA: return "red_key"
+		LlavesTipo.TipoLlave.AZUL: return "blue_key"
+		LlavesTipo.TipoLlave.VERDE: return "green_key"
+		LlavesTipo.TipoLlave.AMARILLA: return "yellow_key"
+	return ""
 
 
 func _try_open():
