@@ -65,13 +65,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xlwoe")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Entidad Walk",
 "speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2416"]
-radius = 596.1015
+radius = 654.04895
 
 [node name="EntidadRF" type="CharacterBody2D" unique_id=761511611 groups=["enemigo"]]
 script = ExtResource("2_d5ptn")
