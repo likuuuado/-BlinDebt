@@ -3,7 +3,7 @@ extends "res://Scripts/ItemBase.gd"
 @export var key_item_id: String
 @export var icon: String = "res://assets/key asset.png"
 @export var tipo: LlavesTipo.TipoLlave
-
+@onready var PickUpSoundKey: AudioStreamPlayer = $PickUpSoundKey
 
 # CATALOGO DE LLAVES MEDIANTE COLORES
 func _ready() -> void:
@@ -23,5 +23,6 @@ func _ready() -> void:
 			$AnimatedSprite2D.play("Idle Llave Verde")
 
 func _on_collected() -> void:
+	PickUpSoundKey.play()
 	Inventory.add_key_item(key_item_id, icon)
 	queue_free()

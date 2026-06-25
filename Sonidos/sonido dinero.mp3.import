@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c37pgmegys8ut"
+path="res://.godot/imported/sonido dinero.mp3-3e2468181d4eef4c5b08d7852ae0f598.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/sonido dinero.mp3"
+dest_files=["res://.godot/imported/sonido dinero.mp3-3e2468181d4eef4c5b08d7852ae0f598.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

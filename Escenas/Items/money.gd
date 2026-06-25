@@ -2,6 +2,7 @@ extends "res://Scripts/ItemBase.gd"
 
 
 @export var value: int
+@onready var PickUpSoundMoney: AudioStreamPlayer = $PickUpSoundMoney
 
 func _ready() -> void:
 	super._ready()
@@ -9,5 +10,6 @@ func _ready() -> void:
 
 
 func _on_collected() -> void:
-		Inventory.add_money(value)
-		queue_free()
+	PickUpSoundMoney.play()
+	Inventory.add_money(value)
+	queue_free()

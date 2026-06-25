@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dxsbrefq2av0s" path="res://assets/Items/Llave Roja BlinDebt-sheet.png" id="3_iddjm"]
 [ext_resource type="Texture2D" uid="uid://b4g7a5famfpxf" path="res://assets/Items/Llave Azul  BlinDebt-sheet.png" id="3_sgf2q"]
 [ext_resource type="Texture2D" uid="uid://be1cg1gl8chty" path="res://assets/Items/Llave Verde  BlinDebt-sheet.png" id="5_84t2k"]
+[ext_resource type="AudioStream" uid="uid://c1byymmpliq5e" path="res://Sonidos/recoger llave.mp3" id="6_84t2k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c1ovs"]
 radius = 39.051247
@@ -734,7 +735,6 @@ animations = [{
 
 [node name="Keys" type="Area2D" unique_id=1584546891 groups=["items", "key_items"]]
 script = ExtResource("1_c1ovs")
-icon = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=793191792]
 shape = SubResource("CircleShape2D_c1ovs")
@@ -743,3 +743,6 @@ shape = SubResource("CircleShape2D_c1ovs")
 scale = Vector2(0.15249999, 0.15249999)
 sprite_frames = SubResource("SpriteFrames_7wru2")
 animation = &"Idle Llave Amarilla"
+
+[node name="PickUpSoundKey" type="AudioStreamPlayer" parent="." unique_id=435943363]
+stream = ExtResource("6_84t2k")

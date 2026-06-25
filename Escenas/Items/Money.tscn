@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp47028gknnjt" path="res://Escenas/Items/money.gd" id="1_p7joc"]
 [ext_resource type="Texture2D" uid="uid://x1k2jdpag6n2" path="res://assets/Items/Dinero-sheet.png" id="2_p7joc"]
+[ext_resource type="AudioStream" uid="uid://c37pgmegys8ut" path="res://Sonidos/sonido dinero.mp3" id="3_tvmyv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7joc"]
 radius = 39.051247
@@ -202,3 +203,6 @@ scale = Vector2(0.14874999, 0.14874999)
 sprite_frames = SubResource("SpriteFrames_p7joc")
 animation = &"Idle Dinero"
 frame_progress = 0.82315814
+
+[node name="PickUpSoundMoney" type="AudioStreamPlayer" parent="." unique_id=27518837]
+stream = ExtResource("3_tvmyv")
