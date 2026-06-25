@@ -19,7 +19,7 @@ func add_money(value: int) -> void:
 	
 
 # Agrega una id de key item y su icono a los respectivos arrays
-func add_key_item(key_item_id, icon) -> void:
+func add_key_item(key_item_id: String, icon: String) -> void:
 	if not key_items_id.has(key_item_id):
 		key_items_id.append(key_item_id)
 	if not key_items_icon.has(icon):

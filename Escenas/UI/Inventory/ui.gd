@@ -1,21 +1,28 @@
 extends Control
 
-@onready var Inventory: Control = $Inventory
+@onready var inventario: Control = $Inventory
 @onready var MoneyLabel: Label = $Gameplay/MoneyLabel
 @onready var KeyItemsContainer: GridContainer = $Inventory/KeyItemsContainer3
 
 
-func _ready() -> void:
-	Inventory.hide()
+func _ready() -> void: # Conectar señales del Inventory
+	inventario.hide()
 	Inventory.connect("money_update", Callable(self, "_on_money_update"))
 	Inventory.connect("key_items_update", Callable(self, "_on_key_items_update"))
+	
+	# Acomodar cada texture rect para que sean del mismo tamaño
+	for child in KeyItemsContainer.get_children():
+		if child is TextureRect:
+			child.expand = true
+			child.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			child.custom_minimum_size = Vector2(124, 124)
 
 func _input(event):
 	if Input.is_action_just_pressed("toggle_inventory"):
-		if Inventory.visible:
-			Inventory.hide()
+		if inventario.visible:
+			inventario.hide()
 		else:
-			Inventory.show()
+			inventario.show()
 
 func _on_money_update(new_value: int) -> void:
 	MoneyLabel.text = str(new_value)
