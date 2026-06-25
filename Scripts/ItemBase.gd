@@ -2,12 +2,12 @@ extends Area2D
 
 var player_in_range: bool = false
 
-func _ready() -> void: # Conectar señales del Area2D al inciar la escena
-	connect("area_entered", Callable(self, "_on_area_entered"))
-	connect("area_exited", Callable(self, "_on_area_exited"))
-	connect("input_event", Callable(self, "_on_input_event"))
-	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
-	connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+func _ready() -> void:
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
+	input_event.connect(_on_input_event)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
 
 func _on_area_entered(area: Area2D) -> void:
