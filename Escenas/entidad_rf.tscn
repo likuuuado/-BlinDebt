@@ -65,7 +65,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xlwoe")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Entidad Walk",
 "speed": 6.0
 }]

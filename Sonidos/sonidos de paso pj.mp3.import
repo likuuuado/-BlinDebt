@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b82kgyahk032v"
+path="res://.godot/imported/sonidos de paso pj.mp3-8162f079b1717368da7d9906c826d52a.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/sonidos de paso pj.mp3"
+dest_files=["res://.godot/imported/sonidos de paso pj.mp3-8162f079b1717368da7d9906c826d52a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
