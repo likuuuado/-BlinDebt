@@ -169,7 +169,6 @@ hframes = 8
 shape = SubResource("CircleShape2D_hqtel")
 
 [node name="Vignette" type="Sprite2D" parent="." unique_id=1608685553]
-visible = false
 z_index = 10
 z_as_relative = false
 scale = Vector2(3, 3)
