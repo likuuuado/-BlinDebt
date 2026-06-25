@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://dydpc3g63yn6d"]
+
+[ext_resource type="Script" uid="uid://c4utlais3wtee" path="res://Scripts/menu_mejoras.gd" id="1_4u5va"]
+[ext_resource type="Texture2D" uid="uid://clx0xgvrqdj6c" path="res://assets/UI/Mejoras/BlinDebt UI Mejoras Caminar.png" id="2_1wdwd"]
+[ext_resource type="Texture2D" uid="uid://bd1jcgwox61qy" path="res://assets/UI/Mejoras/BlinDebt UI Mejoras Deteccion.png" id="3_2rw3b"]
+[ext_resource type="Texture2D" uid="uid://wp1gds2qc5ak" path="res://assets/UI/Mejoras/BlinDebt UI Mejoras Correr.png" id="4_ofe07"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 40
+font_color = Color(0.88, 0.58959997, 0.08800002, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font_color = Color(0.3818588, 0.6765357, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jr6yv"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.3968446, 0.38598493, 0.42961103, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.7176471)
+shadow_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0u6y"]
+font_color = Color(0.30224574, 0.49505484, 0.96913105, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gngh"]
+font_color = Color(0.99999994, 0.16359708, 0.20244145, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofe07"]
+bg_color = Color(0.32172796, 0.32172796, 0.32172787, 1)
+
+[node name="MenuMejoras" type="Control" unique_id=1193605924]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4u5va")
+
+[node name="Caminar" type="Label" parent="." unique_id=186181993]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Correr" type="Label" parent="." unique_id=1926906515]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Deteccion" type="Label" parent="." unique_id=882282397]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Siguiente Mision" type="Label" parent="." unique_id=45232703]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=821981372]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1607320308]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=357781114]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2048016205]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1479352677]
+layout_mode = 2
+
+[node name="Tienda" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2146819811]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "TIENDA"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=409757723]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dinero" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1516138997]
+layout_mode = 2
+text = "$0000"
+label_settings = SubResource("LabelSettings_yf5fn")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=745644865]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=814155307]
+layout_mode = 2
+theme_override_constants/separation = 185
+alignment = 1
+
+[node name="CardCaminar" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2105642423]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCaminar" unique_id=625428044]
+layout_mode = 2
+texture = ExtResource("2_1wdwd")
+
+[node name="Nombre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCaminar" unique_id=1736529911]
+layout_mode = 2
+text = "VELOCIDAD AL
+CAMINAR"
+label_settings = SubResource("LabelSettings_57qmd")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCaminar" unique_id=312941738]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="BtnComprar" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCaminar" unique_id=910847746]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jr6yv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jr6yv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jr6yv")
+text = "MEJORAR"
+
+[node name="CardCorrer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=754961549]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCorrer" unique_id=1507480239]
+layout_mode = 2
+texture = ExtResource("3_2rw3b")
+
+[node name="Nombre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCorrer" unique_id=596138207]
+layout_mode = 2
+text = "MENOR
+DETECCIÓN"
+label_settings = SubResource("LabelSettings_d0u6y")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCorrer" unique_id=959726321]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="BtnComprar" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardCorrer" unique_id=1103074762]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jr6yv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jr6yv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jr6yv")
+text = "MEJORAR"
+
+[node name="CardDeteccion" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1753399196]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardDeteccion" unique_id=327424825]
+layout_mode = 2
+texture = ExtResource("4_ofe07")
+
+[node name="Nombre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardDeteccion" unique_id=201312406]
+layout_mode = 2
+text = "VELOCIDAD AL
+CORRER"
+label_settings = SubResource("LabelSettings_3gngh")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardDeteccion" unique_id=2092881453]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="BtnComprar" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/CardDeteccion" unique_id=1806008534]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jr6yv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jr6yv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jr6yv")
+text = "MEJORAR"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1129363728]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1448540998]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ofe07")
+text = "SIGUIENTE NIVEL"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/CardCaminar/BtnComprar" to="." method="_on_btn_caminar_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/CardCorrer/BtnComprar" to="." method="_on_btn_correr_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/CardDeteccion/BtnComprar" to="." method="_on_btn_deteccion_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_btn_siguiente_nivel_pressed"]

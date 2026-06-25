@@ -39,7 +39,7 @@ func _ready():
 	pathPos = pathFollow.global_position 
 	player = get_tree().get_first_node_in_group("player")
 	angleRads = deg_to_rad(angulo / 2)
-	tiempoAlerta = 1.5
+	tiempoAlerta = 1.5 * MejorasManager.get_modificador_deteccion()
 	
 
 
@@ -51,7 +51,7 @@ func _physics_process(delta):
 
 
 
-func _process(delta):
+func _process(_delta):
 	if Deteccion():
 		tiempoDeteccion.wait_time = tiempoAlerta
 		if tiempoDeteccion.is_stopped():

@@ -25,6 +25,8 @@ func _ready() -> void:
 	estado = "caminando"
 	estamina = estaminaMaxima
 	AlertaGeneral.BuscarBarra()
+	speed = MejorasManager.get_speed_caminar()
+	velocidadCorrer = MejorasManager.get_speed_correr()
 
 func _physics_process(delta):
 	posicionLinterna = get_global_mouse_position()
