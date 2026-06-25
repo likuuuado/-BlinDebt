@@ -17,7 +17,6 @@
 [ext_resource type="Script" uid="uid://b7escxxsy4wbl" path="res://Escenas/verificador_de_victoria.gd" id="10_oh7jq"]
 [ext_resource type="Texture2D" uid="uid://bb7q47yb7pknp" path="res://assets/Escenario/BlinDebt TileSet Floor.png" id="11_vb0ow"]
 [ext_resource type="Texture2D" uid="uid://chm14pn2ujjrc" path="res://assets/Escenario/BlinDebt Salida.png" id="12_aq0fm"]
-[ext_resource type="Texture2D" uid="uid://sffulwe7imhy" path="res://assets/key asset.png" id="14_bw8b6"]
 [ext_resource type="PackedScene" uid="uid://okowej21wdp" path="res://Escenas/Items/candado.tscn" id="14_cd8ic"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd2pr"]
@@ -3410,7 +3409,6 @@ position = Vector2(2697, -844)
 scale = Vector2(0.8, 0.8)
 priority = 1
 key_item_id = "yellow_key"
-icon = ExtResource("14_bw8b6")
 
 [node name="Key Roja" parent="Entorno/Llaves" unique_id=1792427020 instance=ExtResource("4_qr8xh")]
 z_index = 2
@@ -3418,7 +3416,6 @@ position = Vector2(923, -125)
 scale = Vector2(0.8, 0.8)
 priority = 1
 key_item_id = "red_key"
-icon = ExtResource("14_bw8b6")
 tipo = 1
 
 [node name="Key Azul" parent="Entorno/Llaves" unique_id=1593335253 instance=ExtResource("4_qr8xh")]
@@ -3427,7 +3424,6 @@ position = Vector2(2465, -1316)
 scale = Vector2(0.8, 0.8)
 priority = 1
 key_item_id = "blue_key"
-icon = ExtResource("14_bw8b6")
 tipo = 2
 
 [node name="Key Verde" parent="Entorno/Llaves" unique_id=562829403 instance=ExtResource("4_qr8xh")]
@@ -3436,7 +3432,6 @@ position = Vector2(2748, 19)
 scale = Vector2(0.8, 0.8)
 priority = 1
 key_item_id = "green_key"
-icon = ExtResource("14_bw8b6")
 tipo = 3
 
 [node name="Candado" type="Node" parent="." unique_id=535707902]

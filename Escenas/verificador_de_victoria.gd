@@ -12,7 +12,7 @@ func _ready() -> void:
 	canvasVictoria.visible = false
 	Inventory.connect("money_update", Callable(self, "SumarDinero"))
 	Inventory.connect("key_items_update", Callable(self, "VerificarLlave"))
-	cantidadNecesaria = 60
+	cantidadNecesaria = 80
 
 #func VerificarLlave():
 #	tieneLlave = true
@@ -26,3 +26,5 @@ func SumarDinero(new_value: int):
 func _on_body_entered(_body: Player):
 	if cantidadDinero >= cantidadNecesaria or misionCompleta == true:
 		get_tree().change_scene_to_file("res://Escenas/UI/menu_mejoras.tscn")
+	elif cantidadDinero <= cantidadNecesaria:
+		return
