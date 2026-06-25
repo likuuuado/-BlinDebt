@@ -27,3 +27,4 @@ func GestionarBarrra():
 func BuscarBarra():
 	if barra == null:
 		barra = get_tree().get_first_node_in_group("BarraAlerta")
+		canvasPerder = get_tree().get_first_node_in_group("CanvasDerrota")

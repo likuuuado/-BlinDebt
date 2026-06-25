@@ -71,13 +71,15 @@ func _on_timer_timeout():
 		puntosAlerta = 3
 		AlertaGeneral.nivelAlerta += puntosAlerta
 		alerta = true
+		AlertaGeneral.GestionarBarrra()
 		print("Enemigo alerta")
-		return
 	elif alerta == true:
+		tiempoAlerta = 3
 		print("Jugador detectado")
 		puntosAlerta = 6 
 		AlertaGeneral.nivelAlerta += puntosAlerta
-		canvasPerder.visible = true
+		AlertaGeneral.GestionarBarrra()
+
 
 
 func _draw():
