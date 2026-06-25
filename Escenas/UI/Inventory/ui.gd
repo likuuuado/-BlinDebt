@@ -9,6 +9,13 @@ func _ready() -> void: # Conectar señales del Inventory
 	inventario.hide()
 	Inventory.connect("money_update", Callable(self, "_on_money_update"))
 	Inventory.connect("key_items_update", Callable(self, "_on_key_items_update"))
+	
+	# Acomodar cada texture rect para que sean del mismo tamaño
+	for child in KeyItemsContainer.get_children():
+		if child is TextureRect:
+			child.expand = true
+			child.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			child.custom_minimum_size = Vector2(124, 124)
 
 func _input(event):
 	if Input.is_action_just_pressed("toggle_inventory"):
